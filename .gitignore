@@ -1,0 +1,14 @@
+*.~dpr
+*.~ddp
+*.~dfm
+*.~pas
+*.~ddp
+*.exe
+*.map
+*.mes
+*.rar
+*.dcu
+*.jpg
+*.zip
+forms/_history/
+reports/_history/

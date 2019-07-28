@@ -1,0 +1,7 @@
+git init
+git status
+git add .gitignore
+git add -A
+git commit -m Feb_28_2019
+git remote add origin https://rajiv_p@bitbucket.org/rajiv_p/backoffice_xe.git
+git push -u origin master
