@@ -361,7 +361,7 @@ var
 
 implementation
 
-uses BackOfficeDM, GeneralUt, MainFm, VouSearchFm, SearchFm, SelNameFm,
+uses BackOfficeDM, GeneralUt, MainFm,  SearchFm, SelNameFm,
   BoQryFm, VouTicketsFm, VouAccommodationFm, VouServicesFm, VouTransportFm,
   VouPackagesFm, SearchSortFm, ReportParameterFm, ItinDepDatesFm,
   RptDifferencesFm, RptVouchersZeroCostFm, RptMissingBillsFm,
@@ -672,15 +672,15 @@ end;
 
 function TVouBillForm.GetThroughAddressbook (x_Addressbook_id: integer): integer;
 var
-  x_ThroughAddressbook_id, x_option: integer;
+  x_ThroughAddressbook_id: integer;
   GpSds : TSQLDataSet;
   QueryString: string;
 begin
 
-  x_option := 1;
+  //x_option := 1;
 
-  if x_Addressbook_id > 0 then
-    x_option := 2;
+  //if x_Addressbook_id > 0 then
+  //  x_option := 2;
 
   QueryString := 'SELECT Through_Addressbook_id FROM Addressbook ' +
     'WHERE Addressbook_id = ' + IntToStr(x_Addressbook_id) ;

@@ -65,7 +65,7 @@ type
     { Private declarations }
     procedure ActivateInCustom;
     function IsMasterRecordDuplicate: Boolean;
-    procedure RefreshData;
+    //procedure RefreshData;
     procedure ComputeCost;
   public
     { Public declarations }
@@ -215,6 +215,7 @@ begin
   MasterCds['ElemServices_id'] := ElemSightCostForm_ElemServices_id;
 end;
 
+{
 procedure TElemSightCostForm.RefreshData;
 begin
   inherited;
@@ -227,7 +228,7 @@ begin
   MasterCds.Active := true;
 
 end;
-
+}
 
 procedure TElemSightCostForm.MasterCdsTransportCostChange(Sender: TField);
 begin

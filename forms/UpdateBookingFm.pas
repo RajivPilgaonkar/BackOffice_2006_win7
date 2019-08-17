@@ -129,9 +129,6 @@ begin
 end;
 
 procedure TUpdateBookingForm.cxButton1Click(Sender: TObject);
-var
- GpSds : TSQLDataSet;
- HistoryStr, NotesStr: String;
 begin
 {  if (IsReferenceDuplicate) then
     raise Exception.create('Duplicate reference number encountered');

@@ -81,7 +81,7 @@ end;
 function TImportDriveForm.EnterRecordsNorthIndia(scExcelExport: TscExcelExport): integer;
 var
   x_Retval, x_row: integer;
-  x_City, x_State, x_Via, x_Duration, x_Str: string;
+  x_City, x_State, x_Via, x_Duration: string;
   x_FromCities_id, x_ToCities_id, x_StateCrossings_id, x_CityCrossings_id: integer;
   x_Distance, x_Distances_id, x_States_id, x_Cities_id: integer;
   x_QueryString, x_a: string;
@@ -102,7 +102,7 @@ begin
       while (x_row < 1880) and (x_Retval = 0) do
         begin
 
-          x_FromCities_id := 0;
+          //x_FromCities_id := 0;
           x_City := Trim(Range['A' + IntToStr(x_row), 'A' + IntToStr(x_row)].Value);
           x_FromCities_id := ExistCity(x_City);
 
@@ -281,7 +281,6 @@ procedure TImportDriveForm.DeleteOldRecords(x_FromCities_id, x_ToCities_id: inte
 var
   GpSds : TSQLDataSet;
   QueryString: string;
-  x_Max_id: integer;
 begin
 
   GpSds := TSQLDataSet.Create(nil);

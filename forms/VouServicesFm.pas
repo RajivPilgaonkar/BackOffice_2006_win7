@@ -291,13 +291,13 @@ var
 begin
   inherited;
 
-  Pax:=0;
+  //Pax:=0;
   Num_veh:=0;
-  Addressbook_id:=0;
+  //Addressbook_id:=0;
   Masters_id:=0;
-  Services_id:=0;
+  //Services_id:=0;
   Vehicles_id:=0;
-  TransferTypes_id:=0;
+  //TransferTypes_id:=0;
   SS:='0';
   AC:='0';
   Guide:='0';
@@ -343,7 +343,7 @@ begin
       end;
       MasterCDS.Refresh;
 
-      Pax := 0;
+      //Pax := 0;
 
       if (_VouServicesForm_CallType=1) and (VouBillForm.VoucherCds['Pax']=null) then
          Pax:=0

@@ -256,7 +256,7 @@ end;
 
 procedure TElemInterCitiesForm.FilterData;
 var
-  x_Agents_id, x_Cities_id, x_FromCities_id, x_ToCities_id: integer;
+  x_Agents_id, x_FromCities_id, x_ToCities_id: integer;
   x_wef: TDateTime;
 begin
 

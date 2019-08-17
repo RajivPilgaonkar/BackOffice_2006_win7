@@ -134,7 +134,7 @@ procedure TQuoServicesForm.HandleSightSeeing;
 var
   GpSds : TSQLDataSet;
   QueryString: string;
-  x_GuideInt, x_EntranceFeesInt, x_TransportInt: integer;
+  x_GuideInt, x_EntranceFeesInt: integer;
   x_Guide, x_EntranceFees: boolean;
 begin
 
@@ -154,9 +154,9 @@ begin
   if x_EntranceFees = True then
     x_EntranceFeesInt := 1;
 
-  x_TransportInt := 1;
-  if _QuoServicesForm_ModeOfTravel = 5 then
-    x_TransportInt := 0;
+  //x_TransportInt := 1;
+  //if _QuoServicesForm_ModeOfTravel = 5 then
+  //  x_TransportInt := 0;
 
   QueryString := 'EXEC p_InsertQuoSightSeeing ' +
     IntToStr(_QuoServicesForm_Quotations_id) + ',' +

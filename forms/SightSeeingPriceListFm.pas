@@ -257,7 +257,7 @@ end;
 
 procedure TSightSeeingPriceListForm.PrintReport(x_option: integer; x_sightseeing: integer);
 var
-  x_StateStr, x_CatStr, x_Margin, x_OptionVoucher, x_Misc, x_Guide, x_EntranceFees, x_Markup, x_Recommended, x_ServiceTax: string;
+  x_StateStr, x_Margin, x_OptionVoucher, x_Misc, x_Guide, x_EntranceFees, x_Markup, x_Recommended, x_ServiceTax: string;
   GpSds: TSQLDataSet;
 begin
 
@@ -732,7 +732,7 @@ end;
 
 procedure TSightSeeingPriceListForm.PrintRangeReport(x_option: integer; x_sightseeing: integer);
 var
-  x_StateStr, x_CatStr, x_Margin, x_OptionVoucher, x_Misc, x_Guide, x_EntranceFees, x_Markup, x_Recommended, x_ServiceTax: string;
+  x_StateStr, x_Margin, x_OptionVoucher, x_Misc, x_Guide, x_EntranceFees, x_Markup, x_Recommended, x_ServiceTax: string;
   GpSds: TSQLDataSet;
 begin
 
@@ -947,7 +947,7 @@ end;
 procedure TSightSeeingPriceListForm.PrintRangeRecord(GpSds: TSQLDataSet; var x_row: integer; x_option, x_ShowComment: integer);
 var
   x_cost: double;
-  x_NumPax, x_num, x_AllCostZero, x_SSCostZero, x_StartRow: integer;
+  x_NumPax, x_num, x_AllCostZero, x_StartRow: integer;
   x_col, x_comment: string;
 begin
 
@@ -964,7 +964,7 @@ begin
 
       x_NumPax := 1;
       x_col := 'F';
-      x_StartRow := 0;
+      //x_StartRow := 0;
 
       if GpSds['Services_id'] <> null then
         Range['BJ'+IntToStr(x_row),'BJ'+IntToStr(x_row)].Value := GpSds['Services_id'];
@@ -1000,7 +1000,7 @@ begin
         begin
           x_num := 11;
 
-          x_SSCostZero := 0;
+          //x_SSCostZero := 0;
           x_StartRow := 0;
 
           while x_num <= 14 do
@@ -1046,7 +1046,7 @@ begin
               if x_AllCostZero > 0 then
                 begin
                   x_row := x_row + 1;
-                  x_SSCostZero := x_SSCostZero + 1;
+                  //x_SSCostZero := x_SSCostZero + 1;
                 end
               else
                 Range['E'+IntToStr(x_row),'E'+IntToStr(x_row)].Value := '';
@@ -1321,8 +1321,8 @@ end;
 
 procedure TSightSeeingPriceListForm.ServicesDetails_PriceList;
 var
-  x_StateStr, x_FileName, x_Margin, x_OneToTen, x_TransferStr, x_Recommended, x_Misc, x_Guide, x_EntranceFees, x_Transport, x_Meet: string;
-  x_currencies_id, x_NumPax, x_OptionOrder, x_OptionIndia: integer;
+  x_StateStr, x_FileName, x_Margin, x_TransferStr, x_Recommended, x_Meet: string;
+  x_currencies_id, x_OptionOrder, x_OptionIndia: integer;
 begin
 
   if MessageDlg('This will take a few minutes to run. Please wait', mtWarning, [mbYes, mbNo],0) <> mrYes then

@@ -10,11 +10,11 @@ inherited FixedItinCostingForm: TFixedItinCostingForm
     Top = 36
     Caption = 'Close Dates'
     TabOrder = 1
-    Height = 479
-    Width = 630
+    Height = 475
+    Width = 622
     inherited CustomMasterCxGrid: TcxGrid
-      Width = 624
-      Height = 458
+      Width = 616
+      Height = 454
       inherited CustomMasterCxGridDBTableView1: TcxGridDBTableView
         PopupMenu = PopupMenu1
         DataController.KeyFieldNames = 'FixedItinCosts_id'
@@ -61,7 +61,7 @@ inherited FixedItinCostingForm: TFixedItinCostingForm
     end
   end
   inherited Panel1: TPanel
-    Width = 630
+    Width = 622
     TabOrder = 2
     inherited KeyIdDbText: TDBText
       Left = 192
@@ -78,7 +78,7 @@ inherited FixedItinCostingForm: TFixedItinCostingForm
     end
   end
   inherited Panel2: TPanel
-    Width = 630
+    Width = 622
     Height = 36
     TabOrder = 0
     object Label1: TLabel

@@ -485,8 +485,8 @@ var
 implementation
 
 uses BackOfficeDM, GeneralUt, AirlinesFm, RoomTypesFm,
-  MealPlansFm, ClassFm, AutomobilesFm, CentralTaxesFm, CurrenciesFm,
-  AircraftTypesFm, CategoriesFm, CurrDetailsFm, TaxesFm,
+  MealPlansFm, AutomobilesFm, CurrenciesFm,
+  AircraftTypesFm, CategoriesFm, CurrDetailsFm, 
   CarHireAgentsFm, CustomMasterFm, ToursFm, TourCalendersFm,
   PackagesFm, Math, TourFamilyFm, TourDeparturesFm, TrainsFm,
   TrainStationsFm, ProductFm,
@@ -500,8 +500,8 @@ uses BackOfficeDM, GeneralUt, AirlinesFm, RoomTypesFm,
   MasterCopyFm, ItinDepDatesFm, MultiInvoiceFm,
   ReportParameterFm, WebFm, MasterCategoriesFm, VoucherManagerFm,
   RptBookTransferArrivalFm, RptBookExtraAccFm, RptBookDeadLineFm,
-  RptBookDeadLineToursFm, RptFitTravelConfirmFm, RegionFm, CarHireFm, CostServicesFm,
-  CostingsFm, CostAccommodationFm, CostPackagesFm, RpSitListFm, TDSFm, MisProfitabilityFm,
+  RptBookDeadLineToursFm, RptFitTravelConfirmFm, RegionFm, CarHireFm,
+  CostingsFm, CostPackagesFm, RpSitListFm, TDSFm, MisProfitabilityFm,
   AdmUsersFm, ModulesFm, RptFitAccConfirmFm, RptPrintVouchersFm,
   RptSingleVoucherFm, ThemeFm, HotelsFm, RptBookTransferArrivalAllFm,
   RptNumPaxTourFm, TrackTrainSectorsFm, PrincipalAgentFm, MISTourFm,
@@ -563,7 +563,7 @@ begin
 
   except
   end;
-
+                                                
   // Globals
   g_SQLConnection := BackOfficeDataModule.SQLConnection;
   g_Users_id := 0;

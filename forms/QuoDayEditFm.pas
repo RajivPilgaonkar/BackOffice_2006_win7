@@ -410,7 +410,7 @@ procedure TQuoDayEditForm.HandleSightSeeing;
 var
   GpSds : TSQLDataSet;
   QueryString: string;
-  x_GuideInt, x_EntranceFeesInt, x_TransportInt: integer;
+  x_GuideInt, x_EntranceFeesInt: integer;
   x_Guide, x_EntranceFees: boolean;
 begin
 
@@ -430,9 +430,9 @@ begin
   if x_EntranceFees = True then
     x_EntranceFeesInt := 1;
 
-  x_TransportInt := 1;
-  if _QuoDayEditForm_ModeOfTravel = 5 then
-    x_TransportInt := 0;
+  //x_TransportInt := 1;
+  //if _QuoDayEditForm_ModeOfTravel = 5 then
+  //  x_TransportInt := 0;
 
   QueryString := 'EXEC p_InsertQuoSightSeeing ' +
     IntToStr(_QuoDayEditForm_Quotations_id) + ',' +
@@ -1875,7 +1875,7 @@ procedure TQuoDayEditForm.cxButton9Click(Sender: TObject);
 var
   GpSds : TSQLDataSet;
   QueryString: string;
-  x_Count, x_Tickets_id, x_P2P, x_IsRemarksOther: integer;
+  x_Count, x_Tickets_id, x_P2P: integer;
   x_Timing, x_ModeString: string;
 begin
 

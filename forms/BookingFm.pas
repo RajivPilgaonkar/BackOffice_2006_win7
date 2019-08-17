@@ -1807,7 +1807,7 @@ begin
   GpSds.CommandText := x_QueryString;
   GpSds.Open;
 
-  x_quotations_id := 0;
+  //x_quotations_id := 0;
   if (not GpSds.Eof) and (GpSds['Quotations_id'] <> null) then
     begin
       x_quotations_id := GpSds['Quotations_id'];
@@ -1999,7 +1999,6 @@ procedure TBookingForm.SetDefaultHotelCity;
 var
   QueryString: string;
   GpSds: TSQLDataSet;
-  x_hotel_id: integer;
 begin
 
   if BookingToursCds['TourCode'] = null then
@@ -2014,7 +2013,7 @@ begin
   GpSds.CommandText := QueryString;
   GpSds.Open;
 
-  x_hotel_id := 0;
+  //x_hotel_id := 0;
   if (not GpSds.Eof) and (GpSds['Hotel_Addressbook_id'] <> null) then
     AccCds['Addressbook_id']:= GpSds['Hotel_Addressbook_id'];
   if (not GpSds.Eof) and (GpSds['Cities_id'] <> null) then
@@ -2247,7 +2246,6 @@ procedure TBookingForm.SetDefaultAgentCity (x_option: integer);
 var
   QueryString: string;
   GpSds: TSQLDataSet;
-  x_hotel_id: integer;
 begin
 
   if BookingToursCds['TourCode'] = null then
@@ -2262,7 +2260,7 @@ begin
   GpSds.CommandText := QueryString;
   GpSds.Open;
 
-  x_hotel_id := 0;
+  //x_hotel_id := 0;
 
   if x_option = 2 then
     begin
@@ -4417,6 +4415,8 @@ var
   i, x_Bookings_id: integer;
   QueryString: string;
 begin
+
+  x_Bookings_id := -1;
 
   if cxPageControl1.ActivePage = TicketsTab then
     x_Bookings_id := TicketsCds['Bookings_id']

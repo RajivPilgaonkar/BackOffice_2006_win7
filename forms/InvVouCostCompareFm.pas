@@ -115,7 +115,7 @@ type
   private
     { Private declarations }
     procedure FilterData;
-    procedure ComputeCosts(x_option: integer);
+    //procedure ComputeCosts(x_option: integer);
   public
     { Public declarations }
   end;
@@ -253,6 +253,7 @@ begin
 
 end;
 
+{
 procedure TInvVouCostCompareForm.ComputeCosts(x_option: integer);
 var
   x_QueryString: string;
@@ -275,7 +276,7 @@ begin
   GpSds.Free;
 
 end;
-
+}
 
 procedure TInvVouCostCompareForm.cxPageControl1Change(Sender: TObject);
 begin

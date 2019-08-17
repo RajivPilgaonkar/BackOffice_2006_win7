@@ -1033,6 +1033,7 @@ begin
 
   SearchSortForm.SearchGridDBTableView1.DataController.KeyFieldNames := 'TourDepartureDates_id';
 
+  x_Tours_id := -1;
   x_TourCode := '';
   x_TourDate := StrToDate('01/01/2005');
 
@@ -1210,9 +1211,9 @@ begin
   if MasterTourCdsMasters_id.IsNull then
     Exit;
 
-  yearref:=0;
-  min_no:=0;
-  max_no:=0;
+  //yearref:=0;
+  //min_no:=0;
+  //max_no:=0;
   _inputstr := '00000002';
 
   if ReportParameterForm = nil then
@@ -1422,9 +1423,9 @@ begin
   if MasterTourCdsMasters_id.IsNull then
     Exit;
 
-  yearref:=0;
-  min_no:=0;
-  max_no:=0;
+  //yearref:=0;
+  //min_no:=0;
+  //max_no:=0;
   _inputstr := '00000002';
 
   if ReportParameterForm = nil then
@@ -1888,9 +1889,9 @@ begin
   if MasterTourCdsMasters_id.IsNull then
     Exit;
 
-  yearref:=0;
-  min_no:=0;
-  max_no:=0;
+  //yearref:=0;
+  //min_no:=0;
+  //max_no:=0;
   _inputstr := '00000002';
 
   if ReportParameterForm = nil then

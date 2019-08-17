@@ -22,8 +22,7 @@ procedure ImportTrains_Excel(scExcelExport: TScExcelExport; x_FileName: string);
 var
   x_row, x_Days, x_TrainNo_row, x_pos, i, x_offset, x_colNum: integer;
   x_eof, x_success, x_IsDataCol: boolean;
-  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
-  x_FromCity, x_FromCode, x_ToCity, x_ToCode, x_wef, x_wet, x_FlightAirline, x_Via: string;
+  x_Freq: string;
   x_TrainNo, x_col, x_Class, x_timing, x_kms, x_TrainStation, x_str, x_arr, x_dept, x_KmCol, x_TrainName: string;
   x_QueryString, x_XlsName: string;
   GpSds: TSQLDataSet;

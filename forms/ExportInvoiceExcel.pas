@@ -330,7 +330,7 @@ begin
 
       x_row := x_row+1;
 
-      Range['A'+IntToStr(x_row),'E'+IntToStr(x_row)].PageBreak := xlPageBreakManual;
+      Range['A'+IntToStr(x_row),'E'+IntToStr(x_row)].PageBreak := Integer(xlPageBreakManual);
 
     end;
 
@@ -607,7 +607,7 @@ begin
 
       x_row := x_row+1;
 
-      Range['A'+IntToStr(x_row),'A'+IntToStr(x_row)].PageBreak := xlPageBreakManual;
+      Range['A'+IntToStr(x_row),'A'+IntToStr(x_row)].PageBreak := Integer(xlPageBreakManual);
 
     end;
 
@@ -712,7 +712,7 @@ begin
 
       x_row := x_row+1;
 
-      Range['A'+IntToStr(x_row),'F'+IntToStr(x_row)].PageBreak := xlPageBreakManual;
+      Range['A'+IntToStr(x_row),'F'+IntToStr(x_row)].PageBreak := Integer(xlPageBreakManual);
 
     end;
 

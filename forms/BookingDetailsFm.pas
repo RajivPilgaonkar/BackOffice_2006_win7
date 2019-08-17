@@ -117,6 +117,8 @@ var
   x_MasterDepDate: TDateTime;
 begin
 
+  x_MasterDepDate := StrToDate('01/01/2000');
+
   // Called from Booking Form
   if _BookingDetailsForm_Mode = 1 then
     begin

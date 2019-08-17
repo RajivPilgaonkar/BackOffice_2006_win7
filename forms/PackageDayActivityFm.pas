@@ -191,7 +191,7 @@ type
     { Private declarations }
     procedure ActivateInCustom;
     function IsTicketsRecordDuplicate: Boolean;
-    procedure EnterFlightInfo;
+    //procedure EnterFlightInfo;
     procedure DisplayCityLabel;
     procedure SetDefaultRoomType;
     function IsValidHotelRoom(x_Addressbook_id, x_RoomTypes_id: integer): Boolean;
@@ -378,7 +378,7 @@ begin
 
 end;
 
-
+{
 procedure TPackageDayActivityForm.EnterFlightInfo;
 var
   GpSds : TSQLDataSet;
@@ -416,7 +416,7 @@ begin
   GpSds.Free;
 
 end;
-
+}
 
 procedure TPackageDayActivityForm.cxGridDBBandedTableView1FlightNoPropertiesButtonClick(
   Sender: TObject; AButtonIndex: Integer);

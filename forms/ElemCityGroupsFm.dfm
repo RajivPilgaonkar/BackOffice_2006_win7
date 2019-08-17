@@ -99,21 +99,21 @@ inherited ElemCityGroupsForm: TElemCityGroupsForm
     end
   end
   inherited Panel2: TPanel
-    Top = 519
+    Top = 515
     inherited cxDBLabelKeyId: TcxDBLabel
       DataBinding.DataField = 'ElemCityGroups_id'
     end
   end
   inherited Panel3: TPanel
     Top = 43
-    Height = 476
+    Height = 472
     inherited cxPageControl1: TcxPageControl
-      Height = 474
-      ClientRectBottom = 468
+      Height = 470
+      ClientRectBottom = 464
       inherited cxTabSheet1: TcxTabSheet
         Caption = 'Sightseeing'
         inherited cxGrid1: TcxGrid
-          Height = 442
+          Height = 438
           inherited cxGrid1DBBandedTableView1: TcxGridDBBandedTableView
             DataController.KeyFieldNames = 'ElemCityGroups_id'
             object cxGrid1DBBandedTableView1ElemCars_id: TcxGridDBBandedColumn

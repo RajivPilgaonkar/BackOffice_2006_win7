@@ -497,7 +497,7 @@ end;
 procedure TCarHireCityGroupForm.cxButton1Click(Sender: TObject);
 var
   GpSds: TSQLDataSet;
-  x_addressbook_id_str, x_masters_id_str, x_wef, x_wef_new, queryString, x_cg_id_str: string;
+  x_addressbook_id_str, x_wef, x_wef_new, queryString, x_cg_id_str: string;
 begin
 
   if (AdmLevel < 2) then

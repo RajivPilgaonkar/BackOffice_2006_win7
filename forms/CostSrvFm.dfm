@@ -86,7 +86,6 @@ inherited CostSrvForm: TCostSrvForm
   end
   inherited Panel2: TPanel
     Width = 1137
-    OnClick = Panel2Click
     inherited cxButtonUtilities: TcxButton
       DropDownMenu = PopupMenu1
     end

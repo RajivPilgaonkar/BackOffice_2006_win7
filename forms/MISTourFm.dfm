@@ -557,7 +557,7 @@ object MISTourForm: TMISTourForm
       PrinterPage.ScaleMode = smFit
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 1
-      ReportDocument.CreationDate = 42608.620532430560000000
+      ReportDocument.CreationDate = 43693.522039432870000000
       ShrinkToPageWidth = True
       OptionsFormatting.SuppressBackgroundBitmaps = True
       OptionsFormatting.UseNativeStyles = True
@@ -582,7 +582,7 @@ object MISTourForm: TMISTourForm
       PrinterPage.ScaleMode = smFit
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 1
-      ReportDocument.CreationDate = 42608.620532430560000000
+      ReportDocument.CreationDate = 43693.522039432870000000
       ShrinkToPageWidth = True
       OptionsFormatting.SuppressBackgroundBitmaps = True
       OptionsFormatting.UseNativeStyles = True

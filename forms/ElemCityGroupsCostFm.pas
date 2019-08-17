@@ -51,7 +51,7 @@ type
     { Private declarations }
     procedure ActivateInCustom;
     function IsMasterRecordDuplicate: Boolean;
-    procedure RefreshData;
+    //procedure RefreshData;
     procedure ComputeCost;
   public
     { Public declarations }
@@ -182,6 +182,7 @@ begin
   MasterCds['ElemCityGroups_id'] := ElemCityGroupsCostForm_ElemCityGroups_id;
 end;
 
+{
 procedure TElemCityGroupsCostForm.RefreshData;
 begin
   inherited;
@@ -194,7 +195,7 @@ begin
   MasterCds.Active := true;
 
 end;
-
+}
 
 procedure TElemCityGroupsCostForm.MasterCdsCostTransportChange(
   Sender: TField);

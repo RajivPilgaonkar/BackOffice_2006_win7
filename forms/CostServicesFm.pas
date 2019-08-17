@@ -373,7 +373,7 @@ var
 
   Tbl_array: Array[0..6] of TClientDataSet;
   Qry_array: Array[0..5] of TClientDataSet;
-  FilterDate : TDateTime;
+  //FilterDate : TDateTime;
   AdmLevel: Integer;
   _FormMode: integer;
   _IsNewWef:  Boolean;
@@ -435,7 +435,7 @@ end;
 
 procedure TCostServicesForm.ServiceFilter;
 var
-  AgentFilter, ServiceCityFilter, TransferFilter: string;
+  ServiceCityFilter, TransferFilter: string;
 begin
 
   ServiceCityFilter := '';
@@ -593,7 +593,7 @@ end;
 
 procedure TCostServicesForm.ChangeWefCombo;
 var
-  x_Filter, StateFilter, AgentFilter, ServiceCityFilter, ServiceFilter, DateFilter : string;
+  x_Filter, AgentFilter, ServiceCityFilter, ServiceFilter : string;
 begin
   inherited;
 

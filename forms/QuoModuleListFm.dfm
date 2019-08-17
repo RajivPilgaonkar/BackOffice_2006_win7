@@ -19,7 +19,7 @@ object QuoModuleListForm: TQuoModuleListForm
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 970
+    Width = 962
     Height = 41
     Align = alTop
     TabOrder = 0
@@ -46,8 +46,8 @@ object QuoModuleListForm: TQuoModuleListForm
   end
   object Panel2: TPanel
     Left = 0
-    Top = 524
-    Width = 970
+    Top = 520
+    Width = 962
     Height = 37
     Align = alBottom
     TabOrder = 1
@@ -94,14 +94,14 @@ object QuoModuleListForm: TQuoModuleListForm
   object cxPageControl1: TcxPageControl
     Left = 0
     Top = 41
-    Width = 970
-    Height = 483
+    Width = 962
+    Height = 479
     ActivePage = cxModuleTabSheet
     Align = alClient
     TabOrder = 2
-    ClientRectBottom = 477
+    ClientRectBottom = 473
     ClientRectLeft = 3
-    ClientRectRight = 964
+    ClientRectRight = 956
     ClientRectTop = 26
     object cxModuleTabSheet: TcxTabSheet
       Caption = 'Module'
@@ -109,8 +109,8 @@ object QuoModuleListForm: TQuoModuleListForm
       object cxGridMaster: TcxGrid
         Left = 0
         Top = 0
-        Width = 961
-        Height = 451
+        Width = 953
+        Height = 447
         Align = alClient
         TabOrder = 0
         object cxGridDBTableView1: TcxGridDBTableView

@@ -586,7 +586,6 @@ end;
 procedure TQuoModuleElemListForm.InsertModule;
 var
   x_QuoModules_id, x_FixedItin_id, x_NumPax: integer;
-  x_cost, x_ServiceTaxPerc, x_rate: double;
   x_QueryString: string;
   GpSds : TSQLDataSet;
   x_Transport, x_Misc, x_Guide: integer;
@@ -653,7 +652,6 @@ function TQuoModuleElemListForm.GetNextMainOrderNo(x_QuoModules_id: integer): in
 var
   x_OrderNo: integer;
   GpSds : TSQLDataSet;
-  x_QueryString: string;
 begin
 
   GpSds := TSQLDataSet.Create(nil);
@@ -750,9 +748,9 @@ begin
 
   x_ServiceTaxPerc := GetServiceTax(QuoModulesForm.MasterCds['QuotationDate'],  15);
 
-  x_cost := 0.0;
-  if SsCds['Cost'] <> null then
-    x_cost := SsCds['Cost'];
+  //x_cost := 0.0;
+  //if SsCds['Cost'] <> null then
+  //  x_cost := SsCds['Cost'];
 
   x_cost := 0.0;
   if SsCds['TransportCost'] <> null then
@@ -1016,8 +1014,6 @@ begin
 end;
 
 procedure TQuoModuleElemListForm.InsertAccommodation;
-var
-  x_Singles, x_Doubles, x_Triples, x_Addressbook_id: integer;
 begin
 
   if (QuoModulesForm.MasterCds['NumSingles'] <> null) and (QuoModulesForm.MasterCds['NumSingles'] <> 0) then
@@ -1033,10 +1029,12 @@ end;
 
 procedure TQuoModuleElemListForm.InsertAccommodationRoomSize(x_option, x_NumRoooms: integer);
 var
-  x_Rooms, x_Addressbook_id: integer;
+  x_Addressbook_id: integer;
   x_RoomSize: string;
   x_cost, x_ServiceTaxPerc, x_rate: double;
 begin
+
+  x_ServiceTaxPerc := 0.0;
 
   QuoModulesForm.Detail1Cds.Insert;
 
@@ -1046,7 +1044,7 @@ begin
 
   QuoModulesForm.Detail1Cds['Qty'] := x_NumRoooms;
 
-  x_Rooms := 0;
+  //x_Rooms := 0;
   QuoModulesForm.Detail1Cds['Rate'] := 0.0;
   QuoModulesForm.Detail1Cds['ServTaxPerc'] := x_ServiceTaxPerc;
   x_RoomSize := '';
@@ -1055,8 +1053,8 @@ begin
 
   if (x_option = 1) then
     begin
-      if (QuoModulesForm.MasterCds['NumSingles'] <> null) then
-        x_Rooms := QuoModulesForm.MasterCds['NumSingles'];
+      //if (QuoModulesForm.MasterCds['NumSingles'] <> null) then
+      //  x_Rooms := QuoModulesForm.MasterCds['NumSingles'];
 
       if (AccCds['CostSingle'] <> null) then
         x_cost := AccCds['CostSingle'];
@@ -1066,8 +1064,8 @@ begin
 
   if (x_option = 2) then
     begin
-      if (QuoModulesForm.MasterCds['NumDoubles'] <> null) then
-        x_Rooms := QuoModulesForm.MasterCds['NumDoubles'];
+      //if (QuoModulesForm.MasterCds['NumDoubles'] <> null) then
+      //  x_Rooms := QuoModulesForm.MasterCds['NumDoubles'];
 
       if (AccCds['CostDouble'] <> null) then
         x_cost := AccCds['CostDouble'];
@@ -1077,8 +1075,8 @@ begin
 
   if (x_option = 3) then
     begin
-      if (QuoModulesForm.MasterCds['NumTriples'] <> null) then
-        x_Rooms := QuoModulesForm.MasterCds['NumTriples'];
+      //if (QuoModulesForm.MasterCds['NumTriples'] <> null) then
+      //  x_Rooms := QuoModulesForm.MasterCds['NumTriples'];
 
       if (AccCds['CostTriple'] <> null) then
         x_cost := AccCds['CostTriple'];

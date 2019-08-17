@@ -580,7 +580,7 @@ end;
 procedure TCarHireP2PForm.cxButton1Click(Sender: TObject);
 var
   GpSds: TSQLDataSet;
-  x_addressbook_id_str, x_masters_id_str, x_wef, x_wef_new, queryString: string;
+  x_addressbook_id_str, x_wef, x_wef_new, queryString: string;
 begin
 
   if (AdmLevel < 2) then

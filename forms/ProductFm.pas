@@ -201,7 +201,7 @@ end;
 
 procedure TProductForm.FilterCosts;
 var
-  HotelID, AgentID, ProductTypeID, CityID, ToCityID: Integer;
+  HotelID, AgentID, CityID, ToCityID: Integer;
 begin
 
   ShowCombos;
@@ -216,10 +216,10 @@ begin
   else
     AgentID := 0;
 
-  if TypeLCmb.EditValue > 0 then
-    ProductTypeID := TypeLCmb.EditValue
-  else
-    ProductTypeID := 0;
+  //if TypeLCmb.EditValue > 0 then
+  //  ProductTypeID := TypeLCmb.EditValue
+  //else
+  //  ProductTypeID := 0;
 
   if FromCityLCmb.EditValue > 0 then
     CityID := FromCityLCmb.EditValue

@@ -2,6 +2,9 @@ unit ImportTrainsFm;
 
 interface
 
+//otherwise warns about FileCtrl being platform specific
+{$WARN UNIT_PLATFORM OFF}
+
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, CustomMasterCxGridFm, cxStyles, cxCustomData, cxGraphics,

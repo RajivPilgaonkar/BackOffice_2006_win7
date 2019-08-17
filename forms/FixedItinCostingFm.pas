@@ -371,7 +371,7 @@ end;
 
 function TFixedItinCostingForm.GetNumPax: integer;
 var
-  QueryString, x_Filter, x_ItinFilter: string;
+  QueryString: string;
   x_Pax, x_Agents_id, x_Currencies_id: integer;
   GpSds: TSQLDataSet;
 begin
@@ -474,7 +474,6 @@ var
   QueryString: string;
   x_Agents_id, x_Currencies_id: integer;
   GpSds: TSQLDataSet;
-  x_Wet: TDateTime;
 begin
   inherited;
 
@@ -551,7 +550,6 @@ var
   QueryString: string;
   x_Agents_id, x_Currencies_id: integer;
   GpSds: TSQLDataSet;
-  x_Wet: TDateTime;
 begin
   inherited;
 

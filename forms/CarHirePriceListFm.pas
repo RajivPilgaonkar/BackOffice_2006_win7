@@ -530,7 +530,7 @@ end;
 
 procedure TCarHirePriceListForm.PrintRecordP2P(GpSds: TSQLDataSet; var x_row: integer; x_option: integer; x_DisplayOption: integer);
 var
-  x_CurrencyCode,x_ServiceTax: string;
+  x_CurrencyCode: string;
   Gp2Sds: TSQLDataSet;
 begin
 
@@ -787,7 +787,7 @@ end;
 
 procedure TCarHirePriceListForm.PrintReportCG(x_option: integer; x_sightseeing: integer);
 var
-  x_StateStr, x_CatStr, x_Margin, x_OptionVoucher, x_Misc, x_Markup, x_ServiceTax: string;
+  x_StateStr, x_Margin, x_Markup, x_ServiceTax: string;
   GpSds: TSQLDataSet;
 begin
 

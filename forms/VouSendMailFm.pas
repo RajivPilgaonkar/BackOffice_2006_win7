@@ -668,12 +668,12 @@ end;
 procedure TVouSendMailForm.SendAccommodationMail;
 var
   GpSds, AccDisSds, AccAddrSds : TSQLDataSet;
-  QueryString, x_ip, x_Sender, x_To, x_Msg, x_HotelEmail, x_Recipient, x_TourCode, x_date_str, x_UserName, x_PaxName: String;
+  QueryString, x_ip, x_Sender, x_To, x_Msg, x_HotelEmail, x_Recipient, x_TourCode, x_UserName, x_PaxName: String;
   x_Hotel, x_Vouchers_id_str: string;
   x_sendMail : boolean;
   aPDF : TQRPDFDocumentFilter;
-  x_voucherNo, x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo, x_VendorPymtTerms_id: integer;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo, x_VendorPymtTerms_id: integer;
+  Outlook, MailItem, NmSpace: OLEVariant;
   x_VoucherNoArray, x_Vouchers_idArray: array[0..100] of integer;
 begin
 
@@ -1642,11 +1642,11 @@ begin
 procedure TVouSendMailForm.SendTicketsCancelMail;
 var
   GpSds, TicDisSds, TicAddrSds : TSQLDataSet;
-  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_date_str, x_UserName, x_PaxName, x_RemarksCancel: String;
-  x_Agent, x_Vouchers_id_str: string;
+  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_UserName, x_PaxName, x_RemarksCancel: String;
+  x_Agent: string;
   x_sendMail : boolean;
-  x_voucherNo, x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  x_VoucherCount: integer;
+  Outlook, MailItem, NmSpace: OLEVariant;
   x_VoucherNoArray, x_Vouchers_idArray: array[0..100] of integer;
 begin
 
@@ -1738,13 +1738,13 @@ begin
       GpSds.CommandText := QueryString;
       GpSds.Open;
 
-      x_MinVoucherNo := 0;
-      if (not GPSds.EOF) and (GpSds['MinVoucherNo'] <> null) then
-        x_MinVoucherNo := GpSds['MinVoucherNo'];
+      //x_MinVoucherNo := 0;
+      //if (not GPSds.EOF) and (GpSds['MinVoucherNo'] <> null) then
+      //  x_MinVoucherNo := GpSds['MinVoucherNo'];
 
-      x_YearRef := 0;
-      if (not TicAddrSds.Eof) and (TicAddrSds['YearRef'] <> null) then
-        x_YearRef := TicAddrSds['YearRef'];
+      //x_YearRef := 0;
+      //if (not TicAddrSds.Eof) and (TicAddrSds['YearRef'] <> null) then
+      //  x_YearRef := TicAddrSds['YearRef'];
 
       QueryString := 'SELECT MAX(v.VoucherNo) AS MaxVoucherNo ' +
         'FROM VouchersTickets vt LEFT JOIN Vouchers v ON vt.Vouchers_id = v.Vouchers_id ' +
@@ -1758,9 +1758,9 @@ begin
       GpSds.CommandText := QueryString;
       GpSds.Open;
 
-      x_MaxVoucherNo := 0;
-      if (not GPSds.EOF) and (GpSds['MaxVoucherNo'] <> null) then
-        x_MaxVoucherNo := GpSds['MaxVoucherNo'];
+      //x_MaxVoucherNo := 0;
+      //if (not GPSds.EOF) and (GpSds['MaxVoucherNo'] <> null) then
+      //  x_MaxVoucherNo := GpSds['MaxVoucherNo'];
 
       x_VoucherCount := 0;
 
@@ -1843,11 +1843,11 @@ end;
 procedure TVouSendMailForm.SendAccommodationCancelMail;
 var
   GpSds, AccDisSds, AccAddrSds : TSQLDataSet;
-  QueryString, x_ip, x_Sender, x_To, x_Msg, x_HotelEmail, x_Recipient, x_TourCode, x_date_str, x_UserName, x_PaxName, x_RemarksCancel: String;
-  x_Hotel, x_Vouchers_id_str: string;
+  QueryString, x_ip, x_Sender, x_To, x_Msg, x_HotelEmail, x_Recipient, x_TourCode, x_UserName, x_PaxName, x_RemarksCancel: String;
+  x_Hotel: string;
   x_sendMail : boolean;
-  x_voucherNo, x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  x_VoucherCount: integer;
+  Outlook, MailItem, NmSpace: OLEVariant;
   x_VoucherNoArray, x_Vouchers_idArray: array[0..100] of integer;
 begin
 
@@ -1940,13 +1940,13 @@ begin
       GpSds.CommandText := QueryString;
       GpSds.Open;
 
-      x_MinVoucherNo := 0;
-      if (not GPSds.EOF) and (GpSds['MinVoucherNo'] <> null) then
-        x_MinVoucherNo := GpSds['MinVoucherNo'];
+      //x_MinVoucherNo := 0;
+      //if (not GPSds.EOF) and (GpSds['MinVoucherNo'] <> null) then
+      //  x_MinVoucherNo := GpSds['MinVoucherNo'];
 
-      x_YearRef := 0;
-      if (not AccAddrSds.Eof) and (AccAddrSds['YearRef'] <> null) then
-        x_YearRef := AccAddrSds['YearRef'];
+      //x_YearRef := 0;
+      //if (not AccAddrSds.Eof) and (AccAddrSds['YearRef'] <> null) then
+      //  x_YearRef := AccAddrSds['YearRef'];
 
       QueryString := 'SELECT MAX(v.VoucherNo) AS MaxVoucherNo ' +
         'FROM VouchersAccommodation va LEFT JOIN Vouchers v ON va.Vouchers_id = v.Vouchers_id ' +
@@ -1960,9 +1960,9 @@ begin
       GpSds.CommandText := QueryString;
       GpSds.Open;
 
-      x_MaxVoucherNo := 0;
-      if (not GPSds.EOF) and (GpSds['MaxVoucherNo'] <> null) then
-        x_MaxVoucherNo := GpSds['MaxVoucherNo'];
+      //x_MaxVoucherNo := 0;
+      //if (not GPSds.EOF) and (GpSds['MaxVoucherNo'] <> null) then
+      //  x_MaxVoucherNo := GpSds['MaxVoucherNo'];
 
       x_VoucherCount := 0;
 
@@ -2043,11 +2043,11 @@ end;
 procedure TVouSendMailForm.SendServicesCancelMail;
 var
   GpSds, SerDisSds, SerAddrSds : TSQLDataSet;
-  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_date_str, x_UserName, x_PaxName: String;
-  x_Agent, x_Vouchers_id_str, x_RemarksCancel: string;
+  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_UserName, x_PaxName: String;
+  x_Agent, x_RemarksCancel: string;
   x_sendMail : boolean;
-  x_voucherNo, x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  x_VoucherCount: integer;
+  Outlook, MailItem, NmSpace: OLEVariant;
   x_VoucherNoArray, x_Vouchers_idArray: array[0..100] of integer;
 begin
 
@@ -2140,13 +2140,13 @@ begin
       GpSds.CommandText := QueryString;
       GpSds.Open;
 
-      x_MinVoucherNo := 0;
-      if (not GPSds.EOF) and (GpSds['MinVoucherNo'] <> null) then
-        x_MinVoucherNo := GpSds['MinVoucherNo'];
+      //x_MinVoucherNo := 0;
+      //if (not GPSds.EOF) and (GpSds['MinVoucherNo'] <> null) then
+      //  x_MinVoucherNo := GpSds['MinVoucherNo'];
 
-      x_YearRef := 0;
-      if (not SerAddrSds.Eof) and (SerAddrSds['YearRef'] <> null) then
-        x_YearRef := SerAddrSds['YearRef'];
+      //x_YearRef := 0;
+      //if (not SerAddrSds.Eof) and (SerAddrSds['YearRef'] <> null) then
+      //  x_YearRef := SerAddrSds['YearRef'];
 
       QueryString := 'SELECT MAX(v.VoucherNo) AS MaxVoucherNo ' +
         'FROM VouchersServices vs LEFT JOIN Vouchers v ON vs.Vouchers_id = v.Vouchers_id ' +
@@ -2160,9 +2160,9 @@ begin
       GpSds.CommandText := QueryString;
       GpSds.Open;
 
-      x_MaxVoucherNo := 0;
-      if (not GPSds.EOF) and (GpSds['MaxVoucherNo'] <> null) then
-        x_MaxVoucherNo := GpSds['MaxVoucherNo'];
+      //x_MaxVoucherNo := 0;
+      //if (not GPSds.EOF) and (GpSds['MaxVoucherNo'] <> null) then
+      //  x_MaxVoucherNo := GpSds['MaxVoucherNo'];
 
       x_VoucherCount := 0;
 
@@ -2243,11 +2243,11 @@ end;
 procedure TVouSendMailForm.SendTransportCancelMail;
 var
   GpSds, TransDisSds, TransAddrSds : TSQLDataSet;
-  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_date_str, x_UserName, x_PaxName: String;
-  x_Agent, x_Vouchers_id_str, x_RemarksCancel: string;
+  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_UserName, x_PaxName: String;
+  x_Agent, x_RemarksCancel: string;
   x_sendMail : boolean;
-  x_voucherNo, x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  x_VoucherCount: integer;
+  Outlook, MailItem, NmSpace: OLEVariant;
   x_VoucherNoArray, x_Vouchers_idArray: array[0..100] of integer;
 begin
 
@@ -2340,13 +2340,13 @@ begin
       GpSds.CommandText := QueryString;
       GpSds.Open;
 
-      x_MinVoucherNo := 0;
-      if (not GPSds.EOF) and (GpSds['MinVoucherNo'] <> null) then
-        x_MinVoucherNo := GpSds['MinVoucherNo'];
+      //x_MinVoucherNo := 0;
+      //if (not GPSds.EOF) and (GpSds['MinVoucherNo'] <> null) then
+      //  x_MinVoucherNo := GpSds['MinVoucherNo'];
 
-      x_YearRef := 0;
-      if (not TransAddrSds.Eof) and (TransAddrSds['YearRef'] <> null) then
-        x_YearRef := TransAddrSds['YearRef'];
+      //x_YearRef := 0;
+      //if (not TransAddrSds.Eof) and (TransAddrSds['YearRef'] <> null) then
+      //  x_YearRef := TransAddrSds['YearRef'];
 
       QueryString := 'SELECT MAX(v.VoucherNo) AS MaxVoucherNo ' +
         'FROM VouchersTransport vt LEFT JOIN Vouchers v ON vt.Vouchers_id = v.Vouchers_id ' +
@@ -2360,9 +2360,9 @@ begin
       GpSds.CommandText := QueryString;
       GpSds.Open;
 
-      x_MaxVoucherNo := 0;
-      if (not GPSds.EOF) and (GpSds['MaxVoucherNo'] <> null) then
-        x_MaxVoucherNo := GpSds['MaxVoucherNo'];
+      //x_MaxVoucherNo := 0;
+      //if (not GPSds.EOF) and (GpSds['MaxVoucherNo'] <> null) then
+      //  x_MaxVoucherNo := GpSds['MaxVoucherNo'];
 
       x_VoucherCount := 0;
 
@@ -2443,11 +2443,11 @@ end;
 procedure TVouSendMailForm.SendPackageCancelMail;
 var
   GpSds, PackageDisSds, PackageAddrSds : TSQLDataSet;
-  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_date_str, x_UserName, x_PaxName: String;
-  x_Agent, x_Vouchers_id_str, x_RemarksCancel: string;
+  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_UserName, x_PaxName: String;
+  x_Agent, x_RemarksCancel: string;
   x_sendMail : boolean;
-  x_voucherNo, x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  x_VoucherCount: integer;
+  Outlook, MailItem, NmSpace: OLEVariant;
   x_VoucherNoArray, x_Vouchers_idArray: array[0..100] of integer;
 begin
 
@@ -2540,13 +2540,13 @@ begin
       GpSds.CommandText := QueryString;
       GpSds.Open;
 
-      x_MinVoucherNo := 0;
-      if (not GPSds.EOF) and (GpSds['MinVoucherNo'] <> null) then
-        x_MinVoucherNo := GpSds['MinVoucherNo'];
+      //x_MinVoucherNo := 0;
+      //if (not GPSds.EOF) and (GpSds['MinVoucherNo'] <> null) then
+      //  x_MinVoucherNo := GpSds['MinVoucherNo'];
 
-      x_YearRef := 0;
-      if (not PackageAddrSds.Eof) and (PackageAddrSds['YearRef'] <> null) then
-        x_YearRef := PackageAddrSds['YearRef'];
+      //x_YearRef := 0;
+      //if (not PackageAddrSds.Eof) and (PackageAddrSds['YearRef'] <> null) then
+      //  x_YearRef := PackageAddrSds['YearRef'];
 
       QueryString := 'SELECT MAX(v.VoucherNo) AS MaxVoucherNo ' +
         'FROM VouchersPackages vp LEFT JOIN Vouchers v ON vp.Vouchers_id = v.Vouchers_id ' +
@@ -2560,9 +2560,9 @@ begin
       GpSds.CommandText := QueryString;
       GpSds.Open;
 
-      x_MaxVoucherNo := 0;
-      if (not GPSds.EOF) and (GpSds['MaxVoucherNo'] <> null) then
-        x_MaxVoucherNo := GpSds['MaxVoucherNo'];
+      //x_MaxVoucherNo := 0;
+      //if (not GPSds.EOF) and (GpSds['MaxVoucherNo'] <> null) then
+      //  x_MaxVoucherNo := GpSds['MaxVoucherNo'];
 
       x_VoucherCount := 0;
 
@@ -2644,12 +2644,12 @@ end;
 procedure TVouSendMailForm.SendTicketMail;
 var
   GpSds, TicketDisSds, TicketAddrSds : TSQLDataSet;
-  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_date_str, x_UserName, x_PaxName: String;
+  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_UserName, x_PaxName: String;
   x_Agent, x_Vouchers_id_str: string;
   x_sendMail : boolean;
   aPDF : TQRPDFDocumentFilter;
-  x_voucherNo, x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
+  Outlook, MailItem, NmSpace: OLEVariant;
   x_VoucherNoArray, x_Vouchers_idArray: array[0..100] of integer;
 begin
 
@@ -2924,14 +2924,14 @@ end;
 procedure TVouSendMailForm.SendServiceMail;
 var
   GpSds, ServiceDisSds, ServiceAddrSds : TSQLDataSet;
-  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_date_str, x_UserName, x_PaxName: String;
+  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_UserName, x_PaxName: String;
   x_Agent, x_Vouchers_id_str: string;
   x_sendMail : boolean;
   aPDF : TQRPDFDocumentFilter;
-  x_voucherNo, x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
+  Outlook, MailItem, NmSpace: OLEVariant;
   x_VoucherNoArray, x_Vouchers_idArray: array[0..100] of integer;
-  x_Cost: double;
+  //x_Cost: double;
 begin
 
   Outlook := CreateOleObject('Outlook.Application');
@@ -3199,12 +3199,12 @@ end;
 procedure TVouSendMailForm.SendTransportMail;
 var
   GpSds, TransportDisSds, TransportAddrSds : TSQLDataSet;
-  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_date_str, x_UserName, x_PaxName, x_MasterTourCode: String;
+  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_UserName, x_PaxName, x_MasterTourCode: String;
   x_Agent, x_Vouchers_id_str: string;
   x_sendMail, x_HasDetails : boolean;
   aPDF : TQRPDFDocumentFilter;
-  x_voucherNo, x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
+  Outlook, MailItem, NmSpace: OLEVariant;
   x_VoucherNoArray, x_Vouchers_idArray: array[0..100] of integer;
   x_MasterTourDate: TDateTime;
   x_Cost: double;
@@ -3593,14 +3593,14 @@ end;
 procedure TVouSendMailForm.SendPackageMail;
 var
   GpSds, PackageDisSds, PackageAddrSds : TSQLDataSet;
-  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_date_str, x_UserName, x_PaxName: String;
+  QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode, x_UserName, x_PaxName: String;
   x_Agent, x_Vouchers_id_str: string;
   x_sendMail : boolean;
   aPDF : TQRPDFDocumentFilter;
-  x_voucherNo, x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  x_YearRef, x_VoucherCount, x_count, x_MinVoucherNo, x_MaxVoucherNo: integer;
+  Outlook, MailItem, NmSpace: OLEVariant;
   x_VoucherNoArray, x_Vouchers_idArray: array[0..100] of integer;
-  x_Cost: double;
+  //x_Cost: double;
 begin
 
   Outlook := CreateOleObject('Outlook.Application');

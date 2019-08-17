@@ -1346,7 +1346,7 @@ object VouMailStatusForm: TVouMailStatusForm
       PrinterPage.PageSize.Y = 11000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 1
-      ReportDocument.CreationDate = 43518.431903252310000000
+      ReportDocument.CreationDate = 43693.532072303240000000
       OptionsFormatting.UseNativeStyles = True
       OptionsOnEveryPage.Footers = False
       OptionsOnEveryPage.Headers = False

@@ -195,7 +195,6 @@ end;
 procedure TVouAccommodationForm.OkBtnClick(Sender: TObject);
 var
   desc: string;
-  cost: double;
   AC: String;
   Pax, NoSingles, NoDoubles, NoTriples, NoTwins, rm_type, mp_type: Integer;
   Vou_Changed: String;
@@ -203,15 +202,15 @@ var
 begin
   inherited;
   desc:='';
-  cost:=0.00;
+  //cost:=0.00;
   AC:='0';
-  Pax:=0;
-  NoSingles:=0;
-  NoDoubles:=0;
-  NoTwins:=0;
-  NoTriples:=0;
-  rm_type:=0;
-  mp_type:=0;
+  //Pax:=0;
+  //NoSingles:=0;
+  //NoDoubles:=0;
+  //NoTwins:=0;
+  //NoTriples:=0;
+  //rm_type:=0;
+ // mp_type:=0;
   Vou_Changed:='0';
 
   GPSds := TSQLDataSet.Create(nil);

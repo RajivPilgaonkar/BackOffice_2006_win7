@@ -10,7 +10,7 @@ inherited ProductForm: TProductForm
     TabOrder = 2
   end
   inherited Panel2: TPanel
-    Top = 526
+    Top = 522
     object KeyIDText: TDBText
       Left = 710
       Top = 11
@@ -50,8 +50,8 @@ inherited ProductForm: TProductForm
     ParentColor = False
     Style.Color = 15451300
     TabOrder = 0
-    Height = 485
-    Width = 930
+    Height = 481
+    Width = 922
     object TypeLbl: TLabel
       Left = 18
       Top = 26
@@ -94,8 +94,8 @@ inherited ProductForm: TProductForm
     end
     object cxGrid1: TcxGrid
       Left = 3
-      Top = 103
-      Width = 924
+      Top = 99
+      Width = 916
       Height = 379
       Align = alBottom
       TabOrder = 5

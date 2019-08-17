@@ -60,9 +60,9 @@ type
   private
     { Private declarations }
     procedure ActivateInCustom;
-    function IsMasterRecordDuplicate: Boolean;
-    function GetNextMasterSrNo: integer;
-    function GetNextDetailSrNo(QuoExclusions_id: integer): integer;
+    //function IsMasterRecordDuplicate: Boolean;
+    //function GetNextMasterSrNo: integer;
+    //function GetNextDetailSrNo(QuoExclusions_id: integer): integer;
   public
     { Public declarations }
   end;
@@ -133,6 +133,7 @@ begin
   cxGrid1.SetFocus;
 end;
 
+{
 function TQuoExclForm.IsMasterRecordDuplicate: Boolean;
 var
   x_QueryString: string;
@@ -162,8 +163,9 @@ begin
   Result := x_duplicate;
 
 end;
+}
 
-
+{
 function TQuoExclForm.GetNextMasterSrNo: integer;
 var
   GpSds : TSQLDataSet;
@@ -187,7 +189,9 @@ begin
   Result := x_Max_SrNo;
 
 end;
+}
 
+{
 function TQuoExclForm.GetNextDetailSrNo(QuoExclusions_id: integer): integer;
 var
   GpSds : TSQLDataSet;
@@ -212,7 +216,7 @@ begin
   Result := x_Max_SrNo;
 
 end;
-
+}
 
 procedure TQuoExclForm.AgentExclusions1Click(Sender: TObject);
 var

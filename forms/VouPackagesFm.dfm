@@ -11,14 +11,14 @@ inherited VouPackagesForm: TVouPackagesForm
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
-    Width = 497
+    Width = 489
     Height = 36
     BorderStyle = bsNone
     TabOrder = 2
   end
   inherited Panel2: TPanel
-    Top = 262
-    Width = 497
+    Top = 258
+    Width = 489
     BorderStyle = bsNone
     inherited KeyIdDBText: TDBText
       Left = 20
@@ -131,8 +131,8 @@ inherited VouPackagesForm: TVouPackagesForm
   object Panel3: TPanel [2]
     Left = 0
     Top = 36
-    Width = 497
-    Height = 226
+    Width = 489
+    Height = 222
     Align = alClient
     Color = 15451300
     TabOrder = 0
@@ -399,8 +399,6 @@ inherited VouPackagesForm: TVouPackagesForm
   inherited MasterCDS: TClientDataSet
     IndexFieldNames = 'vouchers_id'
     MasterFields = 'vouchers_id'
-    MasterSource = VouBillForm.VoucherDs
-    PacketRecords = 0
     AfterScroll = MasterCdsAfterScroll
     Left = 102
     Top = 3

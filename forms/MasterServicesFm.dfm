@@ -10,13 +10,13 @@ inherited MasterServicesForm: TMasterServicesForm
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
-    Width = 707
+    Width = 699
     Height = 20
     TabOrder = 4
   end
   inherited Panel2: TPanel
-    Top = 439
-    Width = 707
+    Top = 435
+    Width = 699
     Height = 40
     TabOrder = 3
     object KeyIdDbText: TDBText
@@ -80,7 +80,7 @@ inherited MasterServicesForm: TMasterServicesForm
     Style.Color = 15451300
     TabOrder = 0
     Height = 159
-    Width = 707
+    Width = 699
     object Label3: TLabel
       Left = 20
       Top = 24
@@ -288,8 +288,8 @@ inherited MasterServicesForm: TMasterServicesForm
     ParentColor = False
     Style.Color = 15451300
     TabOrder = 2
-    Height = 133
-    Width = 707
+    Height = 129
+    Width = 699
     object Label1: TLabel
       Left = 388
       Top = 21
@@ -301,7 +301,7 @@ inherited MasterServicesForm: TMasterServicesForm
       Left = 3
       Top = 18
       Width = 367
-      Height = 112
+      Height = 108
       Align = alLeft
       TabOrder = 0
       object CustomMasterCxGridDBTableView1: TcxGridDBTableView
@@ -357,7 +357,7 @@ inherited MasterServicesForm: TMasterServicesForm
   object Panel3: TPanel [4]
     Left = 0
     Top = 179
-    Width = 707
+    Width = 699
     Height = 127
     Align = alTop
     Color = 15451300
@@ -626,8 +626,6 @@ inherited MasterServicesForm: TMasterServicesForm
     Active = True
     IndexFieldNames = 'masters_id;day;startingtime'
     MasterFields = 'masters_id'
-    MasterSource = MasterForm.MasterDs
-    PacketRecords = 0
     AfterInsert = MasterCdsAfterInsert
     AfterScroll = MasterCdsAfterScroll
     Left = 56

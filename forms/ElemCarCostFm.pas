@@ -44,7 +44,7 @@ type
     { Private declarations }
     procedure ActivateInCustom;
     function IsMasterRecordDuplicate: Boolean;
-    procedure RefreshData;
+    //procedure RefreshData;
   public
     { Public declarations }
   end;
@@ -169,6 +169,7 @@ begin
   MasterCds['ElemCars_id'] := ElemCarCostForm_ElemCars_id;
 end;
 
+{
 procedure TElemCarCostForm.RefreshData;
 begin
   inherited;
@@ -181,6 +182,6 @@ begin
   MasterCds.Active := true;
 
 end;
-
+}
 
 end.

@@ -206,13 +206,13 @@ var
    GpSds: TSQLDataSet;
    x_date: TDateTime;
 begin
-  Pax:=0;
-  Ticket:=0;
-  From_city:=0;
-  To_city:=0;
-  Class_id:=0;
-  NoBooked:=0;
-  NoCanceld:=0;
+  //Pax:=0;
+  //Ticket:=0;
+  //From_city:=0;
+  //To_city:=0;
+  //Class_id:=0;
+  //NoBooked:=0;
+  //NoCanceld:=0;
 
   Vou_Changed:= '0';
 

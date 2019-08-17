@@ -10,7 +10,7 @@ inherited UpdateBookingForm: TUpdateBookingForm
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
-    Width = 542
+    Width = 517
     Height = 258
     Color = 15451300
     object Label2: TLabel
@@ -161,8 +161,8 @@ inherited UpdateBookingForm: TUpdateBookingForm
     end
   end
   inherited Panel2: TPanel
-    Top = 260
-    Width = 542
+    Top = 258
+    Width = 517
     Height = 46
     inherited KeyIdDBText: TDBText
       Left = 9

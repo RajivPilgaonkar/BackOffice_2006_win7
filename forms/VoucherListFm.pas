@@ -106,9 +106,6 @@ begin
 end;
 
 procedure TVoucherListForm.FilterData;
-var
-  GpSds: TSQLDataSet;
-  x_Category: string;
 begin
 
   if (cxFromDateEdit.Text = '') or (cxToDateEdit.Text = '') then

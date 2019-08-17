@@ -51,7 +51,7 @@ procedure ImportKingfisher_Excel(scExcelExport: TScExcelExport; x_FileName: stri
 var
   x_row, x_Days, x_count: integer;
   x_eof: boolean;
-  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
+  x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
   x_FromCity, x_FromCode, x_ToCity, x_ToCode, x_wef, x_wet, x_FlightAirline, x_Via: string;
   x_QueryString: string;
   GpSds: TSQLDataSet;
@@ -365,7 +365,7 @@ procedure ImportJetAirways_Excel(scExcelExport: TScExcelExport; x_FileName: stri
 var
   x_row, x_Days: integer;
   x_eof: boolean;
-  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
+  x_ToPlace, x_FromPlace, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
   x_FromCity, x_FromCode, x_ToCity, x_ToCode, x_wef, x_wet, x_FlightAirline, x_Via: string;
   x_QueryString, x_chr: string;
   GpSds: TSQLDataSet;
@@ -1010,8 +1010,8 @@ end;
 
 procedure ConvertTimeKingfisher(x_KingfisherTimings: string; var x_Timings: string);
 var
-  x_Str, x_hour, x_minute: string;
-  x_pos, x_pos2: integer;
+  x_hour, x_minute: string;
+  x_pos: integer;
 begin
 
   x_Timings := '';
@@ -1036,8 +1036,8 @@ end;
 
 procedure ConvertTimeIndigo(x_IndigoTimings: string; var x_Timings: string);
 var
-  x_Str, x_hour, x_minute: string;
-  x_pos, x_pos2: integer;
+  x_hour, x_minute: string;
+  x_pos: integer;
 begin
 
   x_Timings := '';
@@ -1125,9 +1125,9 @@ procedure ImportSpiceJet_Excel(scExcelExport: TScExcelExport; x_FileName: string
 var
   x_row, x_Days: integer;
   x_eof: boolean;
-  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq, x_ValidFrom2, x_ValidTo2: string;
+  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
   x_FromCity, x_FromCode, x_ToCity, x_ToCode, x_wef, x_wet, x_FlightAirline: string;
-  x_DeptTime2, x_ArrTime2: string;
+  //x_DeptTime2, x_ArrTime2: string;
   x_QueryString: string;
   GpSds: TSQLDataSet;
   x1, x2: string;
@@ -1259,9 +1259,9 @@ procedure ImportSpiceJet2_Excel(scExcelExport: TScExcelExport; x_FileName: strin
 var
   x_row, x_Days: integer;
   x_eof: boolean;
-  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq, x_ValidFrom2, x_ValidTo2: string;
+  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
   x_FromCity, x_FromCode, x_ToCity, x_ToCode, x_wef, x_wet, x_FlightAirline: string;
-  x_DeptTime2, x_ArrTime2: string;
+  //x_DeptTime2, x_ArrTime2: string;
   x_QueryString: string;
   GpSds: TSQLDataSet;
   x1, x2: string;
@@ -1374,11 +1374,11 @@ end;
 
 procedure ImportIndigo_Txt(x_FileName: string);
 var
-  x_row, x_Days: integer;
-  x_eof: boolean;
-  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
+  x_Days: integer;
+  //x_eof: boolean;
+  x_ToPlace, x_FromPlace, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
   x_FromCity, x_FromCode, x_ToCity, x_ToCode, x_wef, x_wet, x_FlightAirline, x_Via, x_wef2, x_wef3: string;
-  x_DeptTime2, x_ArrTime2: string;
+  //x_DeptTime2, x_ArrTime2: string;
   x_QueryString, S, x_Text: string;
   GpSds: TSQLDataSet;
   F_txt: Textfile;
@@ -1617,13 +1617,13 @@ end;
 
 procedure SplitHTML(S: string; var x_arr: array of string);
 var
-  TagBegin, TagEnd, TagLength, x_index, x_count, x_len, x_pos, i: integer;
+  TagBegin, TagEnd, TagLength, x_count, x_pos: integer;
 begin
 
   x_count := 0;
-  x_index := 1;
-  x_len := length(S);
-  x_index := 1;
+  //x_index := 1;
+//  x_len := length(S);
+  //x_index := 1;
 
   if Copy(S, 1, 1) <> '<' then
     begin
@@ -1659,15 +1659,15 @@ end;
 
 procedure ImportGoAir_Txt(x_FileName: string);
 var
-  x_row, x_Days, x_pos: integer;
-  x_eof: boolean;
-  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
-  x_FromCity, x_FromCode, x_ToCity, x_ToCode, x_wef, x_wet, x_FlightAirline, x_Ignore: string;
-  x_DeptTime2, x_ArrTime2: string;
-  x_QueryString, S, x_Text, x_FromCitySeparatorTag, x_LastLine, x_HtmlLine: string;
+  x_Days: integer;
+  //x_eof: boolean;
+  x_ToPlace, x_FromPlace, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
+  x_FromCity, x_FromCode, x_ToCity, x_ToCode, x_wef, x_wet, x_FlightAirline: string;
+  //x_DeptTime2, x_ArrTime2: string;
+  x_QueryString, x_Text, x_FromCitySeparatorTag, x_LastLine, x_HtmlLine: string;
   GpSds: TSQLDataSet;
   F_txt: Textfile;
-  x_header: boolean;
+  //x_header: boolean;
   x_arr: array[0..10] of string;
 begin
 
@@ -1697,7 +1697,7 @@ begin
   else
     x_wet := x_ValidTo;
 
-  x_header := false;
+  //x_header := false;
 
   x_FromCitySeparatorTag := '<tr bgcolor="#5986c5" height="15"';
 
@@ -1775,7 +1775,7 @@ var
   x_eof: boolean;
   x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
   x_FromCity, x_FromCode, x_ToCity, x_ToCode, x_wef, x_wet, x_FlightAirline, x_Via: string;
-  x_DeptTime2, x_ArrTime2: string;
+  //x_DeptTime2, x_ArrTime2: string;
   x_QueryString: string;
   GpSds: TSQLDataSet;
   x1, x2: string;
@@ -1905,7 +1905,7 @@ procedure ImportIndianAirlines_Excel(scExcelExport: TScExcelExport; x_FileName: 
 var
   x_row, x_Days: integer;
   x_eof: boolean;
-  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
+  x_ToPlace, x_FromPlace, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
   x_FromCity, x_FromCode, x_ToCity, x_ToCode, x_wef, x_wet, x_FlightAirline, x_Via: string;
   x_QueryString, x_chr: string;
   GpSds: TSQLDataSet;
@@ -2015,9 +2015,9 @@ procedure ImportIndigoAirlines_Excel(scExcelExport: TScExcelExport; x_FileName: 
 var
   x_row, x_Days, x_BlankRowCount: integer;
   x_eof: boolean;
-  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
+  x_ToPlace, x_FromPlace, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_Freq: string;
   x_FromCity, x_FromCode, x_ToCity, x_ToCode, x_wef, x_wet, x_FlightAirline, x_Via: string;
-  x_QueryString, x_chr, x_DepartureTime, x_ArrivalTime: string;
+  x_QueryString, x_DepartureTime, x_ArrivalTime: string;
   GpSds: TSQLDataSet;
 begin
 
@@ -2278,9 +2278,9 @@ procedure ImportAirIndia_Excel(scExcelExport: TScExcelExport; x_FileName: string
 var
   x_row, x_Days: integer;
   x_eof: boolean;
-  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq, x_ValidFrom2, x_ValidTo2: string;
+  x_ToPlace, x_FromPlace, x_Type, x_FlightNo, x_DeptTime, x_ArrTime, x_Aircraft, x_Stops, x_ValidFrom, x_ValidTo, x_Freq: string;
   x_FromCity, x_FromCode, x_ToCity, x_ToCode, x_wef, x_wet, x_FlightAirline: string;
-  x_DeptTime2, x_ArrTime2: string;
+  //x_DeptTime2, x_ArrTime2: string;
   x_QueryString: string;
   GpSds: TSQLDataSet;
   x1, x2: string;

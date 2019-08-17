@@ -42,6 +42,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
     Page.Columns = 1
     Page.Orientation = poPortrait
     Page.PaperSize = Default
+    Page.Continuous = False
     Page.Values = (
       127.000000000000000000
       3048.000000000000000000
@@ -73,6 +74,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
     PreviewInitialState = wsMaximized
     PrevShowSearch = False
     PrevInitialZoom = qrZoomToWidth
+    PreviewDefaultSaveType = stQRP
     object DetailBand1: TQRBand
       Left = 48
       Top = 173
@@ -90,7 +92,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        74.083333333333340000
+        74.083333333333330000
         1905.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -125,6 +127,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 8
       end
       object QRDBText4: TQRDBText
@@ -157,6 +160,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 8
       end
       object QRDBText9: TQRDBText
@@ -189,6 +193,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 8
       end
       object QRDBText1: TQRDBText
@@ -221,6 +226,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 8
       end
       object QRDBText2: TQRDBText
@@ -253,6 +259,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 8
       end
     end
@@ -306,6 +313,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 12
       end
       object DateRangeLabel: TQRLabel
@@ -337,6 +345,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 10
       end
     end
@@ -356,7 +365,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
       ForceNewColumn = False
       ForceNewPage = True
       Size.Values = (
-        74.083333333333340000
+        74.083333333333330000
         1905.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -394,6 +403,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 10
       end
     end
@@ -413,7 +423,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        82.020833333333340000
+        82.020833333333330000
         1905.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -467,6 +477,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         WordWrap = True
         Expression = 'SUM(PaymentMadeCds.Paid)'
         Mask = '#,##0.00'
+        ExportAs = exptText
         FontSize = 8
       end
     end
@@ -520,6 +531,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 10
       end
       object QRLabel4: TQRLabel
@@ -551,6 +563,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 10
       end
       object QRLabel6: TQRLabel
@@ -582,6 +595,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 10
       end
       object QRLabel9: TQRLabel
@@ -613,6 +627,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 10
       end
       object QRLabel10: TQRLabel
@@ -644,6 +659,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
         ParentFont = False
         Transparent = False
         WordWrap = True
+        ExportAs = exptText
         FontSize = 10
       end
       object QRShape3: TQRShape
@@ -738,6 +754,7 @@ object RptAccountsPaymentMadeForm: TRptAccountsPaymentMadeForm
   end
   object QRPDFFilter1: TQRPDFFilter
     CompressionOn = False
+    FontHandling = fhSubstitute
     Left = 510
     Top = 8
   end

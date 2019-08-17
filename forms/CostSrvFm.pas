@@ -200,7 +200,6 @@ type
     procedure EntranceFees1Click(Sender: TObject);
     procedure AddnewServiceCity1Click(Sender: TObject);
     procedure DeletethisCosting1Click(Sender: TObject);
-    procedure Panel2Click(Sender: TObject);
     procedure Services1Click(Sender: TObject);
     procedure ransfers1Click(Sender: TObject);
   private
@@ -227,7 +226,7 @@ implementation
 
 uses BackOfficeDM, GeneralUt, ReportParameterFm, SightSeeingPriceListFm,
   TransferPriceListFm, GuidePriceListFm, MiscPriceListFm,
-  EntranceFeesPriceListFm, ServiceCityAddFm, CostServicesFm;
+  EntranceFeesPriceListFm, ServiceCityAddFm;
 
 {$R *.dfm}
 
@@ -1175,16 +1174,6 @@ begin
       GpSds.Free;
 
     end;
-
-end;
-
-procedure TCostSrvForm.Panel2Click(Sender: TObject);
-begin
-  inherited;
-  _CostServicesForm_Level := CostSrvForm_Level;
-
-  if CostServicesForm = nil then
-    Application.CreateForm(TCostServicesForm, CostServicesForm);
 
 end;
 

@@ -197,7 +197,7 @@ end;
 
 procedure TPackagesPriceListForm.PrintReport(x_option: integer; x_sightseeing: integer);
 var
-  x_StateStr, x_CatStr, x_Margin, x_OptionVoucher, x_Misc, x_Markup, x_ServiceTax: string;
+  x_StateStr, x_Margin, x_Markup, x_ServiceTax: string;
   GpSds: TSQLDataSet;
 begin
 
@@ -255,7 +255,7 @@ end;
 procedure TPackagesPriceListForm.PrintReportToExcel (GpSds: TSQLDataSet);
 var
   x_PrevState, x_PrevCity, x_CurrencyCode, x_FileName: string;
-  x_row, x_option, x_PrevDefaultAgents_id, x_PrevAddressbook_id: integer;
+  x_row, x_option, x_PrevAddressbook_id: integer;
   x_NewCity: boolean;
 begin
 
@@ -327,8 +327,9 @@ begin
 
   x_PrevState := '--';
   x_PrevCity := '--';
-  x_PrevDefaultAgents_id := -1;
+  //x_PrevDefaultAgents_id := -1;
   x_row := 4;
+  x_PrevAddressbook_id := -1;
 
   GpSds.First;
 
@@ -339,7 +340,7 @@ begin
       if (not GpSds.EOF) and (GpSds['State'] <> x_PrevState) then
         begin
           PrintNextState(GpSds['State'], x_row);
-          x_PrevDefaultAgents_id := -1;
+          //x_PrevDefaultAgents_id := -1;
         end;
 
       if (not GpSds.EOF) then
@@ -353,7 +354,7 @@ begin
         begin
           PrintNextCity(GpSds['City'], x_row);
           x_NewCity := True;
-          x_PrevDefaultAgents_id := -1;
+          //x_PrevDefaultAgents_id := -1;
         end;
 
       if (not GpSds.EOF) then
@@ -482,7 +483,7 @@ end;
 
 procedure TPackagesPriceListForm.PrintRecordP2P(GpSds: TSQLDataSet; var x_row: integer; x_option: integer; x_DisplayOption: integer);
 var
-  x_CurrencyCode,x_ServiceTax: string;
+  x_CurrencyCode: string;
   Gp2Sds: TSQLDataSet;
 begin
 
@@ -673,7 +674,7 @@ end;
 
 procedure TPackagesPriceListForm.PrintReportP2P(x_option: integer; x_sightseeing: integer; x_DisplayOption: integer);
 var
-  x_StateStr, x_CatStr, x_Margin, x_OptionVoucher, x_Misc, x_Markup, x_ServiceTax: string;
+  x_StateStr, x_Margin, x_Markup, x_ServiceTax: string;
   GpSds: TSQLDataSet;
 begin
 
@@ -730,7 +731,7 @@ end;
 
 procedure TPackagesPriceListForm.PrintReportCG(x_option: integer; x_sightseeing: integer);
 var
-  x_StateStr, x_CatStr, x_Margin, x_OptionVoucher, x_Misc, x_Markup, x_ServiceTax: string;
+  x_StateStr, x_Margin, x_Markup, x_ServiceTax: string;
   GpSds: TSQLDataSet;
 begin
 

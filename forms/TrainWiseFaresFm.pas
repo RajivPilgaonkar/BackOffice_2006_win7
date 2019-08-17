@@ -179,8 +179,6 @@ begin
 end;
 
 procedure TTrainWiseFaresForm.FilterTrainFares;
-var
-  x_Filter: String;
 begin
   TrainFaresSds.Active := False;
   TrainFaresCds.Active := False;

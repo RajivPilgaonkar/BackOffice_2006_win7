@@ -172,7 +172,6 @@ end;
 
 procedure TQuoFixedRateTrainModifyForm.SetTrainDetails;
 var
-  QueryString: string;
   x_trains_id: integer;
   GpSds: TSQLDataSet;
 begin

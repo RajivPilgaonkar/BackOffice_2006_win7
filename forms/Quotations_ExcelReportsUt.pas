@@ -247,11 +247,9 @@ procedure Quo_Details(scExcelExport: TScExcelExport; x_Quotations_id: integer; v
 var
   GpSds, Gp1Sds : TSQLDataSet;
   x_QueryString, x_str: string;
-  x_Prev_ModuleQuotations_id, x_ModuleQuotations_id, x_Prev_HotelAddressbook_id: integer;
+  x_Prev_ModuleQuotations_id, x_ModuleQuotations_id: integer;
   x_Prev_DayNo, x_DayNo, x_GroupNo: integer;
   x_color, x_MaxDayNo: integer;
-  x_Prev_QuoDate: TDateTime;
-  x_overnight: boolean;
 begin
 
   with scExcelExport.ExcelWorkSheet do
@@ -307,10 +305,10 @@ begin
   GpSds.Open;
 
   x_Prev_ModuleQuotations_id := -1;
-  x_Prev_HotelAddressbook_id := -1;
+  //x_Prev_HotelAddressbook_id := -1;
   x_Prev_DayNo := -1;
   x_GroupNo := 0;
-  x_Prev_QuoDate := StrToDate('01/01/2000');
+  //x_Prev_QuoDate := StrToDate('01/01/2000');
   x_color := $00CCFFCC;
 
   with scExcelExport.ExcelWorkSheet do
@@ -319,7 +317,7 @@ begin
       while (not GpSds.EOF) do
         begin
 
-          x_ModuleQuotations_id := 0;
+          //x_ModuleQuotations_id := 0;
           if (GpSds['ModuleQuotations_id']) <> null then
             x_ModuleQuotations_id := GpSds['ModuleQuotations_id']
           else
@@ -346,7 +344,7 @@ begin
           if (GpSds['DayNo']) <> null then
             x_DayNo := GpSds['DayNo'];
 
-          x_overnight := false;
+          //x_overnight := false;
 
           x_QueryString := 'SELECT overnight FROM TmpDetailedItin ' +
                'WHERE Quotations_id = ' + IntToStr(x_Quotations_id) + ' ' +
@@ -356,8 +354,8 @@ begin
           Gp1Sds.CommandText := x_QueryString;
           Gp1Sds.Open;
 
-          if (not Gp1Sds.EOF) and (Gp1Sds['overnight'] <> null) then
-            x_overnight := Gp1Sds['overnight'];
+          //if (not Gp1Sds.EOF) and (Gp1Sds['overnight'] <> null) then
+          //  x_overnight := Gp1Sds['overnight'];
 
           // new module
           if x_DayNo <> x_Prev_DayNo then
@@ -457,9 +455,9 @@ begin
           if (GpSds['DayNo']) <> null then
             x_Prev_DayNo := GpSds['DayNo'];
 
-          x_Prev_HotelAddressbook_id := 0;
-          if (GpSds['HotelAddressbook_id']) <> null then
-            x_Prev_HotelAddressbook_id := GpSds['HotelAddressbook_id'];
+          //x_Prev_HotelAddressbook_id := 0;
+          //if (GpSds['HotelAddressbook_id']) <> null then
+          //  x_Prev_HotelAddressbook_id := GpSds['HotelAddressbook_id'];
 
           Range['A'+IntToStr(x_row),'F'+IntToStr(x_row)].Interior.Color := x_color;
 

@@ -645,8 +645,8 @@ end;
 procedure TVouMailStatusForm.cxGridImpPoDBBandedTableView1StylesGetContentStyle(
   Sender: TcxCustomGridTableView; ARecord: TcxCustomGridRecord;
   AItem: TcxCustomGridTableItem; out AStyle: TcxStyle);
-var
-  AColumn: TcxCustomGridTableItem;
+//var
+//  AColumn: TcxCustomGridTableItem;
 begin
 
 {

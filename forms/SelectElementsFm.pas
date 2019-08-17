@@ -222,8 +222,6 @@ uses BackOfficeDM, Excel2000, GeneralUt, ImportErrorsFm,
 {$R *.dfm}
 
 procedure TSelectElementsForm.FormCreate(Sender: TObject);
-var
-  x_Year: integer;
 begin
   cxPageControl1.ActivePageIndex := 0;
 

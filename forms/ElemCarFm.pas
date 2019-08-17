@@ -226,7 +226,7 @@ end;
 
 procedure TElemCarForm.FilterData;
 var
-  x_Agents_id, x_Cities_id: integer;
+  x_Agents_id: integer;
   x_wef: TDateTime;
 begin
 

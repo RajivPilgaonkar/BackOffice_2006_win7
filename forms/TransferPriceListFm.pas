@@ -166,7 +166,7 @@ end;
 
 procedure TTransferPriceListForm.PrintReport(x_option: integer; x_sightseeing: integer; x_DisplayOption: integer);
 var
-  x_StateStr, x_CatStr, x_Margin, x_OptionVoucher, x_Misc, x_Markup, x_ServiceTax: string;
+  x_StateStr, x_Margin, x_OptionVoucher, x_Misc, x_Markup, x_ServiceTax: string;
   GpSds: TSQLDataSet;
 begin
 

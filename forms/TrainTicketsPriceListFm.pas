@@ -267,7 +267,6 @@ procedure TTrainTicketsPriceListForm.WriteToExcel(GpSds:TSQLDataSet; scExcelExpo
           x_margin, x_markup, x_CostField: string);
 var
   x_CurrencyCode: string;
-  x_overnight: integer;
 begin
 
   with scExcelExport.ExcelWorkSheet do

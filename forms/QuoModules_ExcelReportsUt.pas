@@ -42,9 +42,9 @@ var
   _x_Date: array[0..1000] of string;
   _x_Total: array[0..1000] of string;
   _x_ServiceTax: array[0..1000] of string;
-  _x_ServiceTaxExclCess: array[0..1000] of string;
-  _x_SbCess: array[0..1000] of string;
-  _x_KkCess: array[0..1000] of string;
+ // _x_ServiceTaxExclCess: array[0..1000] of string;
+ // _x_SbCess: array[0..1000] of string;
+ // _x_KkCess: array[0..1000] of string;
   _x_ServiceTaxAmt: array[0..1000] of string;
   _x_ServiceTaxExclCessAmt: array[0..1000] of string;
   _x_SbCessAmt: array[0..1000] of string;
@@ -391,7 +391,7 @@ begin
               else
                 scExcelExport.ExcelWorkSheet.Range['A'+IntToStr(x_StartRow),'I'+IntToStr(x_row)].Interior.Color := $00CCFFCC;
 
-              scExcelExport.ExcelWorkSheet.Range['A'+IntToStr(x_row+1),'I'+IntToStr(x_row+1)].PageBreak := xlPageBreakManual;
+              scExcelExport.ExcelWorkSheet.Range['A'+IntToStr(x_row+1),'I'+IntToStr(x_row+1)].PageBreak := Integer(xlPageBreakManual);
 
               x_row := x_row + 1;
               x_StartRow := x_row;
@@ -443,7 +443,7 @@ begin
               else
                 scExcelExport.ExcelWorkSheet.Range['A'+IntToStr(x_StartRow),'I'+IntToStr(x_row)].Interior.Color := $00CCFFCC;
 
-              scExcelExport.ExcelWorkSheet.Range['A'+IntToStr(x_row+1),'I'+IntToStr(x_row+1)].PageBreak := xlPageBreakManual;
+              scExcelExport.ExcelWorkSheet.Range['A'+IntToStr(x_row+1),'I'+IntToStr(x_row+1)].PageBreak := Integer(xlPageBreakManual);
 
               x_row := x_row + 1;
               x_StartRow := x_row;
@@ -459,7 +459,7 @@ begin
 
   if x_option = 2 then
     begin
-      scExcelExport.ExcelWorkSheet.Range['A'+IntToStr(x_row+1),'I'+IntToStr(x_row+1)].PageBreak := xlPageBreakManual;
+      scExcelExport.ExcelWorkSheet.Range['A'+IntToStr(x_row+1),'I'+IntToStr(x_row+1)].PageBreak := Integer(xlPageBreakManual);
       QuoModule_OutstandingInvoices (scExcelExport, x_row);
     end;
 
@@ -724,8 +724,7 @@ end;
 
 procedure QuoModule_Header_Inv (var x_row, x_Invoices_id: integer; scExcelExport:TScExcelExport; GpSds: TSQLDataSet; x_QuoModules_id: integer);
 var
-  x_Pan, x_TourCode, x_QueryString, x_sal, x_ServiceTaxNo, x_CinNo: string;
-  BookSds: TSQLDataSet;
+  x_Pan, x_TourCode, x_ServiceTaxNo, x_CinNo: string;
 begin
 
   x_TourCode := '';
@@ -844,11 +843,10 @@ end;
 
 procedure Invoice_Details (var x_row, x_Invoices_id: integer; scExcelExport:TScExcelExport; GpSds: TSQLDataSet; x_QuoModules_id: integer);
 var
-  x_CellCol, x_CurrencyCode, x_QueryString: string;
-  x_StartRow, x_ItemNo: integer;
+  x_CellCol, x_CurrencyCode: string;
+  x_StartRow: integer;
   x_ServiceTaxPerc, x_ServiceTaxTotal, x_ServiceTaxExclCessPerc: double;
-  x_CessPerc, x_CessTotal, x_SbCessPerc, x_KkCessPerc: double;
-  Gp1Sds : TSQLDataSet;
+  x_SbCessPerc, x_KkCessPerc: double;
   x_Rate_CellCol, x_ST_CellCol, x_Net_CellCol, x_Qty_CellCol: string;
 begin
 
@@ -1007,8 +1005,8 @@ procedure QuoModule_Details (var x_row, x_QuoModules_id: integer; scExcelExport:
 var
   x_CellCol, x_CurrencyCode, x_QueryString: string;
   x_StartRow, x_ItemNo, x_numSkip: integer;
-  x_ServiceTaxPerc, x_ServiceTaxTotal, x_ServiceTaxExclCessPerc, x_SbCessPerc, x_KkCessPerc: double;
-  x_GstPerc, x_GstTotal: double;
+  x_ServiceTaxPerc, x_ServiceTaxExclCessPerc, x_SbCessPerc, x_KkCessPerc: double;
+  x_GstPerc: double;
   Gp1Sds : TSQLDataSet;
   x_Rate_CellCol, x_ST_CellCol, x_Net_CellCol, x_Qty_CellCol: string;
   x_total_tax_perc, x_TotalAmt, x_InvoiceBasicAmt, x_ServiceTaxAmt, x_SbCessAmt, x_KkCessAmt, x_AmtBeforeCancellation: double;
@@ -1034,7 +1032,7 @@ begin
       x_ServiceTaxPerc := x_GstPerc;
       _x_ServiceTaxPerc := x_ServiceTaxPerc;
 
-      x_ServiceTaxExclCessPerc := x_ServiceTaxPerc;
+      //x_ServiceTaxExclCessPerc := x_ServiceTaxPerc;
       x_ServiceTaxExclCessPerc := x_ServiceTaxPerc;
 
       x_SbCessPerc := 0.0;
@@ -1224,7 +1222,7 @@ begin
       // Total Amt including tax & cess
       x_TotalAmt := x_AmtBeforeCancellation;
       x_InvoiceBasicAmt := SimpleRoundTo(x_TotalAmt/(1 + x_total_tax_perc/100),-2);
-      x_ServiceTaxAmt := SimpleRoundTo((x_ServiceTaxExclCessPerc/100)*x_InvoiceBasicAmt,-2);
+      //x_ServiceTaxAmt := SimpleRoundTo((x_ServiceTaxExclCessPerc/100)*x_InvoiceBasicAmt,-2);
       x_SbCessAmt := SimpleRoundTo((x_SbCessPerc/100)*x_InvoiceBasicAmt,-2);
       //x_KkCessAmt := x_TotalAmt - (x_InvoiceBasicAmt+x_ServiceTaxAmt+x_SbCessAmt);
       x_KkCessAmt := SimpleRoundTo((x_KkCessPerc/100)*x_InvoiceBasicAmt,-2);
@@ -1326,13 +1324,12 @@ end;
 
 procedure QuoModule_OutstandingInvoices (scExcelExport:TScExcelExport; var x_row: integer);
 var
-  x_StartRow, x_cnt, x_table_row, x_table_end_row, i: integer;
+  x_StartRow, x_cnt, x_table_row, x_table_end_row: integer;
   x_Pan, x_LocalBankAccount, x_Beneficiary, x_QueryString, x_ServiceTaxNo, x_CinNo: string;
   Gp1Sds : TSQLDataSet;
-  strList: TStringList;
 begin
 
-  strList := TStringList.Create;
+  //strList := TStringList.Create;
 
   Gp1Sds := TSQLDataSet.Create(nil);
   Gp1Sds.SQLConnection := BackOfficeDataModule.SQLConnection;
@@ -1661,10 +1658,8 @@ end;
 procedure QuoModule_Quotation_Excel(scExcelExport: TScExcelExport; x_FileName: string; x_QuoModules_id, x_option, x_Months_id, x_YearRef, x_PrincipalAgents_id, x_ServiceTaxOption: integer);
 var
   GpSds : TSQLDataSet;
-  x_QueryString, x_Str: string;
-  x_row, x_StartRow, x_GroupNo: integer;
-  x_PrevAssetModules_id: integer;
-  x_NewGroup: boolean;
+  x_QueryString: string;
+  x_row, x_StartRow: integer;
 begin
 
   scExcelExport.CloseAllExcelApps;
@@ -1691,8 +1686,8 @@ begin
 
   x_row := 1;
   x_StartRow := x_row;
-  x_PrevAssetModules_id := -1;
-  x_GroupNo := 0;
+  //x_PrevAssetModules_id := -1;
+  //x_GroupNo := 0;
 
   QuoModule_Quotation_Header (x_row, x_QuoModules_id, scExcelExport, GpSds, x_ServiceTaxOption);
 
@@ -1709,7 +1704,7 @@ begin
   scExcelExport.ExcelWorkSheet.Range['I'+IntToStr(x_StartRow),'M'+IntToStr(x_row)].ColumnWidth := 11.0;
 
   x_row := x_row + 1;
-  x_StartRow := x_row;
+  //x_StartRow := x_row;
 
   scExcelExport.ExcelWorkSheet.Range['D1','E1'].EntireColumn.Hidden := true;
 
@@ -1724,12 +1719,12 @@ end;
 
 procedure QuoModule_Quotation_Header (var x_row, x_QuoModules_id: integer; scExcelExport:TScExcelExport; GpSds: TSQLDataSet; x_ServiceTaxOption: integer);
 var
-  i: integer;
-  x_Pan, x_TourCode, x_QueryString, x_sal, x2: string;
+  x_TourCode, x_QueryString: string;
   BookSds: TSQLDataSet;
   x_TourDate: TDateTime;
-  x: char;
 begin
+
+  x_TourDate := StrToDate('01/01/2000');
 
   x_TourCode := '';
   if GpSds['TourCode'] <> null then
@@ -1893,10 +1888,9 @@ end;
 
 procedure QuoModule_Quotation_Details (var x_row, x_QuoModules_id: integer; scExcelExport:TScExcelExport; GpSds: TSQLDataSet; x_ServiceTaxOption: integer);
 var
-  x_CellCol, x_CurrencyCode, x_QueryString: string;
-  x_StartRow, x_ItemNo, x_SubTotal_row: integer;
+  x_CellCol: string;
+  x_StartRow, x_SubTotal_row: integer;
   x_ServiceTaxPerc, x_ServiceTaxExclCessPerc, x_SbCessPerc, x_KkCessPerc: double;
-  Gp1Sds : TSQLDataSet;
   x_Rate_CellCol, x_ServiceTax_CellCol, x_NetPrice_CellCol, x_Qty_CellCol: string;
 begin
 
@@ -2033,7 +2027,7 @@ function GetServiceTaxAmt (x_QuoModules_id: integer): double;
 var
   x_QueryString: string;
   Gp1Sds : TSQLDataSet;
-  x_GrandAmt, x_SubAmt, x_amt: double;
+  x_GrandAmt, x_amt: double;
 begin
 
   Gp1Sds := TSQLDataSet.Create(nil);

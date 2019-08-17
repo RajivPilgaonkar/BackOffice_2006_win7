@@ -17,7 +17,7 @@ uses BackOfficeDM, Variants, GeneralUt;
 procedure Tds_Excel(scExcelExport: TScExcelExport; x_FileName: string; x_FromDate, x_ToDate: TDateTime; x_Option: integer);
 var
   GpSds: TSQLDataSet;
-  x_QueryString, x_CellCol, x_Folio, x_Party, x_PrevFolio, x_PrevParty: string;
+  x_CellCol, x_Folio, x_Party, x_PrevFolio, x_PrevParty: string;
   x_row, x_StartRow: integer;
 begin
 

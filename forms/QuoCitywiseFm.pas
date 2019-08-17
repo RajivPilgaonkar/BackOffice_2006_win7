@@ -602,7 +602,6 @@ var
   x_error: integer;
   x_Pax, x_str: string;
   GpSds : TSQLDataSet;
-  QueryString: string;
 begin
   inherited;
 
@@ -1235,14 +1234,13 @@ begin
 
 procedure TQuoCitywiseForm.SetOvernightJourney (x_QuoCities_id, x_Nights: integer);
 var
-  x_Overnight: boolean;
   GpSds : TSQLDataSet;
   QueryString: string;
   x_Quotations_id: integer;
   x_DateIn, x_DateOut: TDateTime;
 begin
 
-  x_Overnight := False;
+  //x_Overnight := False;
 
   QueryString := 'SELECT Quotations_id, DateIn FROM QuoCities ' +
     'WHERE QuoCities_id = ' + IntToStr(x_QuoCities_id);
@@ -1400,7 +1398,6 @@ end;
 procedure TQuoCitywiseForm.SightSeeing1Click(Sender: TObject);
 var
   x_QuoCities_id: integer;
-  x_Visited: boolean;
 begin
   inherited;
 
@@ -1418,7 +1415,7 @@ begin
   else
     _QuoServicesForm_QuoServices_id := 0;
 
-  x_Visited := AlreadyVisited (Detail1Cds['QuoCities_id'], Detail1Cds['QuoCities_id']);
+  //x_Visited := AlreadyVisited (Detail1Cds['QuoCities_id'], Detail1Cds['QuoCities_id']);
 
   if QuoServicesForm = nil then
     Application.CreateForm(TQuoServicesForm, QuoServicesForm);
@@ -2330,9 +2327,6 @@ begin
 end;
 
 procedure TQuoCitywiseForm.AgentLCBPropertiesChange(Sender: TObject);
-var
-  GpSds : TSQLDataSet;
-  QueryString: string;
 begin
   inherited;
 

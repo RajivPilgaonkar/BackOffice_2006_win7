@@ -161,7 +161,7 @@ end;
 
 procedure TEntranceFeesPriceListForm.PrintReport(x_option: integer; x_sightseeing: integer);
 var
-  x_StateStr, x_CatStr, x_Margin, x_OptionVoucher, x_Misc, x_Guide, x_EntranceFees, x_Markup, x_Recommended, x_Resident, x_ServiceTax: string;
+  x_StateStr, x_Margin, x_OptionVoucher, x_Misc, x_Guide, x_EntranceFees, x_Markup, x_Recommended, x_Resident, x_ServiceTax: string;
   GpSds: TSQLDataSet;
 begin
 

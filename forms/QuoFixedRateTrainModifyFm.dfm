@@ -8,9 +8,9 @@ inherited QuoFixedRateTrainModifyForm: TQuoFixedRateTrainModifyForm
   TextHeight = 13
   inherited GroupBox1: TcxGroupBox
     Caption = 'Services'
-    Width = 918
+    Width = 910
     inherited CustomMasterCxGrid: TcxGrid
-      Width = 912
+      Width = 904
       inherited CustomMasterCxGridDBTableView1: TcxGridDBTableView
         DataController.KeyFieldNames = 'QuoFixedRatesTickets_id'
         OptionsData.Deleting = False
@@ -57,7 +57,7 @@ inherited QuoFixedRateTrainModifyForm: TQuoFixedRateTrainModifyForm
     end
   end
   inherited Panel1: TPanel
-    Width = 918
+    Width = 910
     inherited KeyIdDbText: TDBText
       Left = 760
       DataField = 'QuoFixedRatesTickets_id'
@@ -73,7 +73,7 @@ inherited QuoFixedRateTrainModifyForm: TQuoFixedRateTrainModifyForm
     end
   end
   inherited Panel2: TPanel
-    Width = 918
+    Width = 910
     object Label1: TLabel
       Left = 8
       Top = 16

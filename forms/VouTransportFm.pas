@@ -187,18 +187,18 @@ end;
 procedure TVouTransportForm.OkBtnClick(Sender: TObject);
 var
   Desc, AC, From_Place, To_Place : string;
-  Kms, Pax, Num_Veh, veh_id, frm_city_id, to_city_id : Integer;
+  Pax, Num_Veh, veh_id, frm_city_id, to_city_id : Integer;
   Vou_Changed: String;
   GPSds: TSQLDataSet;
 begin
   inherited;
 
-  Kms:=0;
+  //Kms:=0;
   Desc:='';
   Ac:='0';
   From_Place:='';
   To_Place:='';
-  Pax:=0;
+  //Pax:=0;
   Num_Veh:=0;
   veh_id:=0;
   frm_city_id:=0;
@@ -270,7 +270,7 @@ begin
       end;
       MasterCDS.Refresh;
 
-      Pax := 0;
+      //Pax := 0;
 
 
       if (_VouTransportForm_CallType=1) and (VouBillForm.VoucherCds['Pax']=null) then

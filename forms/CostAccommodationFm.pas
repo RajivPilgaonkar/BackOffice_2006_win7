@@ -330,7 +330,7 @@ var
   _CostAccommodationForm_Level: Integer;
 implementation
 
-uses BackOfficeDM, GeneralUt, SelOprFm, CentralTaxesFm, BoQryFm,
+uses BackOfficeDM, GeneralUt, SelOprFm, BoQryFm,
   SearchSortFm, ReportParameterFm, CostingTraceFm, MainFm, DefaultHotelsFm,
   HotelPriceListFm, CostAccFm;
 
@@ -406,7 +406,7 @@ end;
 
 procedure TCostAccommodationForm.ChangeWefCombo;
 var
-  x_Filter, GitFilter, HotelFilter, DateFilter : string;
+  x_Filter, GitFilter, HotelFilter : string;
 begin
   inherited;
 
@@ -1036,7 +1036,7 @@ end;
 procedure TCostAccommodationForm.DisplayCostBtnClick(Sender: TObject);
 var
   GpSds: TSQLDataSet;
-  x_AddressBook_id,NumPax,x_NumSingles,x_NumDoubles,x_RoomTypes_id, x_NumExtraBeds,
+  x_AddressBook_id,x_NumSingles,x_NumDoubles,x_RoomTypes_id, x_NumExtraBeds,
   x_MealPlans_id,x_currencies_id: Integer;
   x_AC, x_FIT: String;
   x_ExchRate: Double;
@@ -1052,17 +1052,17 @@ begin
     end;
 }    
 
-  x_ExchRate:=0.0;
+  //x_ExchRate:=0.0;
 
   if SeasonsCds['Addressbook_id'] = Null then
      Exit;
 
   x_AddressBook_id := SeasonsCds['Addressbook_id'];
 
-  if NoofPaxTxt.Text = '' then
-    NumPax := 0
-  else
-    NumPax:= StrToInt(NoofPaxTxt.Text);
+  //if NoofPaxTxt.Text = '' then
+  //  NumPax := 0
+  //else
+  //  NumPax:= StrToInt(NoofPaxTxt.Text);
 
   if SinglesTxt.Text = '' then
     x_NumSingles := 0
@@ -1079,8 +1079,8 @@ begin
   else
     x_NumExtraBeds:= StrToInt(ExtraBedsTxt.Text);
 
-  if Length(Trim(ExchangeRateTxt.Text)) <> 0 then
-    x_ExchRate:= StrToFloat(Trim(ExchangeRateTxt.Text));
+  //if Length(Trim(ExchangeRateTxt.Text)) <> 0 then
+  //  x_ExchRate:= StrToFloat(Trim(ExchangeRateTxt.Text));
 
   if Length(Trim(NightsTxt.Text))<>0 then
      x_Nights:= StrToInt(NightsTxt.Text)

@@ -109,7 +109,6 @@ inherited CostAccForm: TCostAccForm
   inherited Panel2: TPanel
     Top = 619
     Width = 1289
-    OnClick = Panel2Click
     object Shape1: TShape [0]
       Left = 111
       Top = 12

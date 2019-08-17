@@ -101,7 +101,7 @@ begin
       else
         scExcelExport.ExcelWorkSheet.Range['A'+IntToStr(x_StartRow),x_cell+IntToStr(x_EndRow)].Interior.Color := $00CCFFCC;
 
-      scExcelExport.ExcelWorkSheet.Range['A'+IntToStr(x_row),'A'+IntToStr(x_row)].PageBreak := xlPageBreakManual;
+      scExcelExport.ExcelWorkSheet.Range['A'+IntToStr(x_row),'A'+IntToStr(x_row)].PageBreak := Integer(xlPageBreakManual);
 
       GpSds.Next;
 

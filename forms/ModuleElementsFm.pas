@@ -230,10 +230,10 @@ uses BackOfficeDM, Excel2000, GeneralUt, ImportErrorsFm,
 {$R *.dfm}
 
 procedure TModuleElementsForm.FormCreate(Sender: TObject);
-var
-  x_Year: integer;
+//var
+  //x_Year: integer;
 begin
-  x_Year := YearOf(IncYear(Date,-1));
+  //x_Year := YearOf(IncYear(Date,-1));
   cxPageControl1.ActivePageIndex := 0;
 
   ModulesCds.Open;
@@ -499,7 +499,7 @@ end;
 procedure TModuleElementsForm.AutoInsertElementsforallModules1Click(
   Sender: TObject);
 var
-  x_QueryString, x_QuotationRef: string;
+  x_QueryString: string;
   GpSds: TSQLDataSet;
 begin
 

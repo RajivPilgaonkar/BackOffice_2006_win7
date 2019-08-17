@@ -192,7 +192,7 @@ end;
 procedure THotelNightsForm.BankListings1Click(Sender: TObject);
 var
   GpSds: TSQLDataSet;
-  x_StartRow, x_row, x_lastRow : integer;
+  x_StartRow, x_row : integer;
   x_Path, x_FileName, x_Cell : string;
 begin
 

@@ -55,7 +55,7 @@ uses BackOfficeDM, MainFm;
 procedure TImportForm.cxButton1Click(Sender: TObject);
 var
   GpSds: TSQLDataSet;
-  x_row, x_count: integer;
+  x_row: integer;
 begin
   scExcelExport.ExcelVisible := True;
   scExcelExport.LoadDefaultProperties;
@@ -80,7 +80,7 @@ begin
   ImportCds.Active := False;
   ImportCds.Active := True;
 
-  x_count := 1;
+  //x_count := 1;
 
 
   //MAX(IF(LEN(B1:B65000)>0,ROW(B1:B65000),0))
@@ -107,7 +107,7 @@ begin
        //       ImportCds['id'] := x_count;
               ImportCds.Post;
 
-              x_count := x_count + 1;
+              //x_count := x_count + 1;
 
             end;
 
@@ -131,7 +131,7 @@ begin
         //  ImportCds['id'] := x_count;
           ImportCds.Post;
 
-          x_count := x_count + 1;
+          //x_count := x_count + 1;
 
         end;
 
@@ -156,7 +156,7 @@ begin
        //   ImportCds['id'] := x_count;
           ImportCds.Post;
 
-          x_count := x_count + 1;
+         // x_count := x_count + 1;
 
         end;
 
@@ -181,7 +181,7 @@ begin
      //     ImportCds['id'] := x_count;
           ImportCds.Post;
 
-          x_count := x_count + 1;
+          //x_count := x_count + 1;
 
         end;
 
@@ -216,7 +216,7 @@ begin
       //    ImportCds['id'] := x_count;
           ImportCds.Post;
 
-          x_count := x_count + 1;
+          //x_count := x_count + 1;
 
         end;
 
@@ -251,7 +251,7 @@ begin
       //    ImportCds['id'] := x_count;
           ImportCds.Post;
 
-          x_count := x_count + 1;
+          //x_count := x_count + 1;
 
         end;
 

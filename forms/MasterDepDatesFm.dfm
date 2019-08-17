@@ -23,7 +23,7 @@ object MasterDepDatesForm: TMasterDepDatesForm
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 950
+    Width = 942
     Height = 167
     Align = alTop
     Color = 16445154
@@ -63,7 +63,7 @@ object MasterDepDatesForm: TMasterDepDatesForm
       Top = 8
       Width = 204
       Height = 153
-      Date = 38606.348497175920000000
+      Date = 38606.627869409720000000
       TabOrder = 2
     end
     object SelectTourGB: TcxGroupBox
@@ -103,8 +103,8 @@ object MasterDepDatesForm: TMasterDepDatesForm
   end
   object Panel2: TPanel
     Left = 0
-    Top = 568
-    Width = 950
+    Top = 564
+    Width = 942
     Height = 36
     Align = alBottom
     Color = 15451300
@@ -136,24 +136,24 @@ object MasterDepDatesForm: TMasterDepDatesForm
   object cxSplitter1: TcxSplitter
     Left = 0
     Top = 167
-    Width = 950
-    Height = 6
+    Width = 942
+    Height = 4
     HotZoneClassName = 'TcxMediaPlayer8Style'
     AlignSplitter = salTop
     Control = Panel1
   end
   object ToursPC: TcxPageControl
     Left = 0
-    Top = 173
-    Width = 950
-    Height = 395
+    Top = 171
+    Width = 942
+    Height = 393
     ActivePage = MasterTabSheet
     Align = alClient
     TabOrder = 3
     OnChange = ToursPCChange
-    ClientRectBottom = 389
+    ClientRectBottom = 387
     ClientRectLeft = 3
-    ClientRectRight = 944
+    ClientRectRight = 936
     ClientRectTop = 26
     object MasterTabSheet: TcxTabSheet
       Caption = 'Masters'
@@ -161,8 +161,8 @@ object MasterDepDatesForm: TMasterDepDatesForm
       object CustomMasterCxGrid: TcxGrid
         Left = 0
         Top = 0
-        Width = 941
-        Height = 363
+        Width = 933
+        Height = 361
         Align = alClient
         TabOrder = 0
         object CustomMasterCxGridDBTableView1: TcxGridDBTableView

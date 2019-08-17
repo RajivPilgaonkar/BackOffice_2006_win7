@@ -63,8 +63,8 @@ uses BackOfficeDM, ReportParameterFm;
 
 procedure TRptAccountsPaymentMadeForm.DetailBand1AfterPrint(
   Sender: TQRCustomBand; BandPrinted: Boolean);
-var
-  tSds : TSQLDataSet;  
+//var
+  //tSds : TSQLDataSet;  
 begin
 {  QRExpr2.Expression := '';
 

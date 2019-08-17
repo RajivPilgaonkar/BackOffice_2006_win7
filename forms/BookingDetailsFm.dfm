@@ -18,7 +18,7 @@ object BookingDetailsForm: TBookingDetailsForm
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 954
+    Width = 946
     Height = 41
     Align = alTop
     TabOrder = 0
@@ -69,8 +69,8 @@ object BookingDetailsForm: TBookingDetailsForm
   end
   object Panel2: TPanel
     Left = 0
-    Top = 490
-    Width = 954
+    Top = 486
+    Width = 946
     Height = 41
     Align = alBottom
     TabOrder = 1
@@ -101,8 +101,8 @@ object BookingDetailsForm: TBookingDetailsForm
   object cxGrid1: TcxGrid
     Left = 0
     Top = 41
-    Width = 954
-    Height = 449
+    Width = 946
+    Height = 445
     Align = alClient
     TabOrder = 2
     object cxGrid1DBTableView1: TcxGridDBTableView

@@ -235,7 +235,6 @@ type
     procedure HotelPriceList1Click(Sender: TObject);
     procedure DeletethisCosting1Click(Sender: TObject);
     procedure cxButton4Click(Sender: TObject);
-    procedure Panel2Click(Sender: TObject);
     procedure Detail1CdsAfterPost(DataSet: TDataSet);
     procedure Detail1CdsAfterDelete(DataSet: TDataSet);
     procedure MultiWefMnuClick(Sender: TObject);
@@ -260,8 +259,7 @@ var
 implementation
 
 uses BackOfficeDM, SelOprFm, GeneralUt, CostingTraceFm, MainFm,
-  ReportParameterFm, HotelPriceListFm, DefaultHotelsFm,
-  CostAccommodationFm;
+  ReportParameterFm, HotelPriceListFm, DefaultHotelsFm;
 
 var
   CostAccForm_DisplayType: integer;
@@ -1264,17 +1262,6 @@ begin
   DefaultHotelsForm := nil;
 
 end;
-
-procedure TCostAccForm.Panel2Click(Sender: TObject);
-begin
-  inherited;
-
-  _CostAccommodationForm_Level := CostAccForm_Level;
-
-  if CostAccommodationForm = nil then
-    Application.CreateForm(TCostAccommodationForm, CostAccommodationForm);
-
-end;
 
 procedure TCostAccForm.Detail1CdsAfterPost(DataSet: TDataSet);
 begin

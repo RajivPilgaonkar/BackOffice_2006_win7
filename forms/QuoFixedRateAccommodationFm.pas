@@ -369,7 +369,7 @@ procedure TQuoFixedRateAccommodationForm.GetTransferDataFromExcel;
 var
   x_Count, x_Row : Integer;
   x_eof: Boolean;
-  x_QuoFixedRatesServices_id, x_QueryString, x_Cost, x_Wef, x_Rate: String;
+  x_QuoFixedRatesServices_id, x_QueryString, x_Cost, x_Wef: String;
   x_CurrencyCode, x_Currencies_id, x_Services_id, x_Vehicles_id, x_AgentAddressbook_id: string;
   GpSds: TSQLDataSet;
   x_exists, x_valid: boolean;
@@ -476,7 +476,7 @@ procedure TQuoFixedRateAccommodationForm.GetCarHireDataFromExcel;
 var
   x_Count, x_Row : Integer;
   x_eof: Boolean;
-  x_QuoFixedRatesCars_id, x_QueryString, x_Cost, x_Wef, x_Rate: String;
+  x_QuoFixedRatesCars_id, x_QueryString, x_Cost, x_Wef: String;
   x_CurrencyCode, x_Currencies_id, x_ServiceCities_id, x_Vehicles_id, x_Addressbook_id: string;
   GpSds: TSQLDataSet;
   x_exists, x_valid: boolean;
@@ -578,7 +578,7 @@ procedure TQuoFixedRateAccommodationForm.GetInterCityDataFromExcel;
 var
   x_Count, x_Row : Integer;
   x_eof: Boolean;
-  x_QuoFixedRatesInterCities_id, x_QueryString, x_Cost, x_Wef, x_Rate: String;
+  x_QuoFixedRatesInterCities_id, x_QueryString, x_Cost, x_Wef: String;
   x_CurrencyCode, x_Currencies_id, x_FromCities_id, x_ToCities_id, x_Vehicles_id, x_Addressbook_id: string;
   GpSds: TSQLDataSet;
   x_exists, x_valid: boolean;
@@ -684,12 +684,12 @@ procedure TQuoFixedRateAccommodationForm.GetSightSeeingDataFromExcel;
 var
   x_Count, x_Row : Integer;
   x_eof: Boolean;
-  x_QuoFixedRatesServices_id, x_QueryString, x_Wef, x_Rate: String;
+  x_QuoFixedRatesServices_id, x_QueryString, x_Wef: String;
   x_Cost_1, x_Cost_2, x_Cost_3, x_Cost_4, x_Cost_5: string;
   x_Cost_6, x_Cost_7, x_Cost_8, x_Cost_9, x_Cost_10: string;
   x_CurrencyCode, x_Currencies_id, x_Services_id, x_Vehicles_id, x_AgentAddressbook_id: string;
   GpSds: TSQLDataSet;
-  x_exists, x_valid: boolean;
+  x_exists: boolean;
 begin
   GpSds := TSQLDataSet.Create(nil);
   GpSds.SQLConnection := BackOfficeDataModule.SQLConnection;
@@ -771,7 +771,7 @@ begin
 
               x_exists := CheckSightSeeingRecordExists(x_Services_id, x_AgentAddressbook_id, x_wef, x_Currencies_id);
 
-              x_valid := true;
+              //x_valid := true;
 
               if not x_exists then
                 begin
@@ -872,12 +872,12 @@ procedure TQuoFixedRateAccommodationForm.GetTrainDataFromExcel;
 var
   x_Count, x_Row : Integer;
   x_eof: Boolean;
-  x_QuoFixedRatesServices_id, x_QueryString, x_Cost, x_Wef, x_Rate: String;
+  x_QueryString, x_Cost, x_Wef: String;
   x_CurrencyCode, x_Currencies_id, x_Trains_id, x_class_id, x_TrainNo: string;
   x_FromCities_id, x_ToCities_id, x_FromStations_id, x_ToStations_id, x_QuoFixedRatesTickets_id: string;
   NewString, x_Timings: string;
   GpSds: TSQLDataSet;
-  x_exists, x_valid, ClickedOK: boolean;
+  x_exists, ClickedOK: boolean;
 begin
 
   NewString := '01/01/' + IntToStr(YearOf(Date()));
@@ -951,7 +951,7 @@ begin
 
               x_exists := CheckTrainRecordExists(x_TrainNo, x_wef, x_Currencies_id, x_Class_id);
 
-              x_valid := true;
+              //x_valid := true;
 
               if not x_exists then
                 begin
@@ -1367,6 +1367,7 @@ begin
 
   x_count := GpSds['x_count'];
 
+  x_exists := false;
   if x_count > 0 then
     x_exists := true;
 
@@ -1394,6 +1395,7 @@ begin
 
   x_count := GpSds['x_count'];
 
+  x_exists := false;
   if x_count > 0 then
     x_exists := true;
 
@@ -1422,6 +1424,7 @@ begin
 
   x_count := GpSds['x_count'];
 
+  x_exists := false;
   if x_count > 0 then
     x_exists := true;
 
@@ -1450,6 +1453,7 @@ begin
 
   x_count := GpSds['x_count'];
 
+  x_exists := false;
   if x_count > 0 then
     x_exists := true;
 
@@ -1478,6 +1482,7 @@ begin
 
   x_count := GpSds['x_count'];
 
+  x_exists := false;
   if x_count > 0 then
     x_exists := true;
 
@@ -1507,6 +1512,7 @@ begin
 
   x_count := GpSds['x_count'];
 
+  x_exists := false; 
   if x_count > 0 then
     x_exists := true;
 
@@ -1533,6 +1539,7 @@ begin
 
   x_count := GpSds['x_count'];
 
+  x_exists := false; 
   if x_count > 0 then
     x_exists := true;
 
@@ -2067,7 +2074,7 @@ end;
 
 procedure TQuoFixedRateAccommodationForm.WriteTrainMultiReport;
 var
-  x_row, x_option, x_agents_id: integer;
+  x_row, x_agents_id: integer;
   GpSds: TSQLDataSet;
   x_Margin, x_Markup, x_FileName: string;
 begin

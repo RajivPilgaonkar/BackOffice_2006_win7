@@ -557,7 +557,6 @@ function TQuoModuleListForm.GetNextMainOrderNo(x_QuoModules_id: integer): intege
 var
   x_OrderNo: integer;
   GpSds : TSQLDataSet;
-  x_QueryString: string;
 begin
 
   GpSds := TSQLDataSet.Create(nil);
@@ -823,8 +822,6 @@ begin
 end;
 
 procedure TQuoModuleListForm.InsertAccommodation;
-var
-  x_Singles, x_Doubles, x_Triples, x_Addressbook_id: integer;
 begin
 
   if (QuoModulesForm.MasterCds['NumSingles'] <> null) and (QuoModulesForm.MasterCds['NumSingles'] <> 0) then
@@ -840,7 +837,7 @@ end;
 
 procedure TQuoModuleListForm.InsertAccommodationRoomSize(x_option, x_NumRoooms: integer);
 var
-  x_Rooms, x_Addressbook_id: integer;
+  x_Addressbook_id: integer;
   x_RoomSize: string;
 begin
 
@@ -852,14 +849,14 @@ begin
 
   QuoModulesForm.Detail1Cds['Qty'] := x_NumRoooms;
 
-  x_Rooms := 0;
+  //x_Rooms := 0;
   QuoModulesForm.Detail1Cds['Rate'] := 0.0;
   x_RoomSize := '';
 
   if (x_option = 1) then
     begin
-      if (QuoModulesForm.MasterCds['NumSingles'] <> null) then
-        x_Rooms := QuoModulesForm.MasterCds['NumSingles'];
+      //if (QuoModulesForm.MasterCds['NumSingles'] <> null) then
+      //  x_Rooms := QuoModulesForm.MasterCds['NumSingles'];
 
       if (AccCds['CostSingle'] <> null) then
         QuoModulesForm.Detail1Cds['Rate'] := AccCds['CostSingle'];
@@ -869,8 +866,8 @@ begin
 
   if (x_option = 2) then
     begin
-      if (QuoModulesForm.MasterCds['NumDoubles'] <> null) then
-        x_Rooms := QuoModulesForm.MasterCds['NumDoubles'];
+      //if (QuoModulesForm.MasterCds['NumDoubles'] <> null) then
+      //  x_Rooms := QuoModulesForm.MasterCds['NumDoubles'];
 
       if (AccCds['CostDouble'] <> null) then
         QuoModulesForm.Detail1Cds['Rate'] := AccCds['CostDouble'];
@@ -880,8 +877,8 @@ begin
 
   if (x_option = 3) then
     begin
-      if (QuoModulesForm.MasterCds['NumTriples'] <> null) then
-        x_Rooms := QuoModulesForm.MasterCds['NumTriples'];
+      //if (QuoModulesForm.MasterCds['NumTriples'] <> null) then
+       // x_Rooms := QuoModulesForm.MasterCds['NumTriples'];
 
       if (AccCds['CostTriple'] <> null) then
         QuoModulesForm.Detail1Cds['Rate'] := AccCds['CostTriple'];

@@ -22,7 +22,7 @@ type
     procedure cxButton2Click(Sender: TObject);
   private
     { Private declarations }
-    procedure ExecuteBatchFile(x_FileName: String);
+    //procedure ExecuteBatchFile(x_FileName: String);
   public
     { Public declarations }
   end;
@@ -40,7 +40,6 @@ uses BackOfficeDM, MainFm;
 procedure TSQLiteForm.cxButton1Click(Sender: TObject);
 var
   GpSds, Gp1Sds: TSQLDataSet;
-  x_count: integer;
   x_dir, x_TextFilePath, S: string;
   F_data: Textfile;
 begin
@@ -138,6 +137,7 @@ begin
   SQLiteForm := nil;
 end;
 
+{
 procedure TSQLiteForm.ExecuteBatchFile(x_FileName: String);
 var
 sei: TShellExecuteInfo;
@@ -155,7 +155,7 @@ begin
     end;
   ShellExecuteEX(@sei);
 end;
-
+}
 
 procedure TSQLiteForm.cxButton2Click(Sender: TObject);
 var

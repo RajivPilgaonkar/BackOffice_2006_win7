@@ -132,9 +132,6 @@ begin
 end;
 
 procedure TFitStatusListForm.FilterData;
-var
-  GpSds: TSQLDataSet;
-  x_Category: string;
 begin
 
   if (cxFromDateEdit.Text = '') or (cxToDateEdit.Text = '') then

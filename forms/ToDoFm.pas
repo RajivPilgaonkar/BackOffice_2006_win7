@@ -230,10 +230,8 @@ begin
 end;
 
 procedure TToDoForm.AutoDateRange (x_Date: TDateTime; x_option: integer);
-var
-  x_Day, x_Month, x_Year : Word;
-  x_DateStart, x_DateEnd: TDateTime;
-  x_Add: integer;
+//var
+//  x_Day, x_Month, x_Year : Word;
 begin
 
   ToDateEdit.Date  :=  IncMonth(x_date);

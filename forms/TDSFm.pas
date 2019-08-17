@@ -390,7 +390,7 @@ end;
 
 procedure TTDSForm.DSCertificate1Click(Sender: TObject);
 var
-   Str_month : Integer;
+   //Str_month : Integer;
    xYear, xMonth, xDay: Word;
 begin
   inherited;
@@ -408,7 +408,7 @@ begin
   if ReportParameterForm.ModalResult = mrOk then
     begin
 
-      Str_month := MonIndex(UpperCase(ReportParameterForm.cxMonthLCMB.Text));
+      //Str_month := MonIndex(UpperCase(ReportParameterForm.cxMonthLCMB.Text));
 
       if RptTdsFormNo16Form = nil then
         Application.CreateForm(TRptTdsFormNo16Form,RptTdsFormNo16Form);

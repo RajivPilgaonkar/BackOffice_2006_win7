@@ -611,7 +611,11 @@ var
 begin
 
   if MasterDepDatesCds['masters_id'] = null then
-    exit;
+    begin
+      Result := 0;
+      exit;
+    end;
+
 
   QueryString := 'SELECT MAX(TourDate) As MaxDate FROM MasterDepartureDates ' +
     'WHERE Masters_id = ' + IntToStr(MasterDepDatesCds['masters_id']);
@@ -658,7 +662,10 @@ var
 begin
 
   if TourDepDatesCds['TourCodes_id'] = null then
-    exit;
+    begin
+      Result := 0;
+      exit;
+    end;
 
   QueryString := 'SELECT MAX(TourDate) As MaxDate FROM TourDepartureDates ' +
     'WHERE TourCodes_id = ' + IntToStr(TourDepDatesCds['TourCodes_id']);
@@ -718,7 +725,10 @@ var
 begin
 
   if TourDepDatesCds['TourCodes_id'] = null then
-    exit;
+    begin
+      Result := 0;
+      exit;
+    end;
 
   QueryString := 'SELECT NoOfDays FROM TourCodes ' +
     'WHERE TourCodes_id = ' + IntToStr(TourDepDatesCds['TourCodes_id']);

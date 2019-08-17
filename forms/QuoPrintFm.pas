@@ -1477,8 +1477,6 @@ begin
 end;
 
 procedure TQuoPrintForm.WriteHotelPdfFile;
-var
-  x_PDF : TQRPDFDocumentFilter;
 begin
 
   SaveChanges;
@@ -1578,8 +1576,6 @@ end;
 
 procedure TQuoPrintForm.WriteDetailedItinPdfFile(x_option: integer; x_Filename: string);
 var
-  GpSds : TSQLDataSet;
-  x_QuoModules_id: integer;
   x_PDF : TQRPDFDocumentFilter;
 begin
   inherited;
@@ -1699,7 +1695,7 @@ end;
 procedure TQuoPrintForm.SendEmail(x_option: integer);
 var
   x_Path, x_FileName, x_ip, x_To, x_TourCode, x_PaxInfo, x_QueryString, x_Sender: string;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  Outlook, MailItem, NmSpace, MapiFolder: OLEVariant;
   x_sendMail: boolean;
   GpSds : TSQLDataSet;
 begin

@@ -193,7 +193,7 @@ begin
   inherited;
 
   Vou_Changed:='0';
-  x_numvehicles:=0;
+  //x_numvehicles:=0;
   x_vehicles_id:=0;
    
   if (VouBillForm.VoucherCds['Checked'] = True) then

@@ -408,11 +408,13 @@ end;
 
 procedure TMISTourForm.cxDBPivotGrid1ReelsCalculateCustomSummary(
   Sender: TcxPivotGridField; ASummary: TcxPivotGridCrossCellSummary);
+{
 var
   AOrderCount: integer;
   AGroup: string;
   i: integer;
   ARow, AColumn: TcxPivotGridGroupItem;
+}  
 begin
 
 {

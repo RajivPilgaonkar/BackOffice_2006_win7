@@ -204,6 +204,8 @@ begin
         ', ' + IntToStr(SourceUser_id);
       tSds.ExecSQL;
 
+      tSds.Free;
+
       MasterCds.Refresh;
 
       RightsCds.Refresh;
@@ -211,7 +213,6 @@ begin
   SearchSortForm.Free;
   SearchSortForm := nil;
 
-  tSds.Free;
 
 end;
 
@@ -251,9 +252,6 @@ begin
 end;
 
 procedure TAdmUsersForm.RightsCdsBeforePost(DataSet: TDataSet);
-var
-  tSds: TSQLDataSet;
-  ModulesCnt: Integer;
 begin
   if RightsCds.State = dsInsert then
     RightsCds['AdmUserRights_id'] := GetNextId('AdmUserRights','AdmUserRights_id');
@@ -420,15 +418,17 @@ begin
         ', ' + IntToStr(SourceUser_id);
       tSds.ExecSQL;
 
+      tSds.Free;
+
       MasterCds.Refresh;
 
       RightsCds.Refresh;
+
     end;
 
   SearchSortForm.Free;
   SearchSortForm := nil;
 
-  tSds.Free;
 
 
 end;

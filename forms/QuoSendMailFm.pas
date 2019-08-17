@@ -426,9 +426,9 @@ end;
 procedure TQuoSendMailForm.SendAccommodationMail;
 var
   GpSds : TSQLDataSet;
-  QueryString, x_ip, x_Sender, x_To, x_Msg, x_HotelEmail, x_Recipient, x_TourCode, x_date_str, x_Rem: String;
+  QueryString, x_ip, x_Sender, x_To, x_Msg, x_HotelEmail, x_Recipient, x_TourCode,  x_Rem: String;
   x_sendMail : boolean;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  Outlook, MailItem, NmSpace: OLEVariant;
 begin
 
   Outlook := CreateOleObject('Outlook.Application');
@@ -686,7 +686,7 @@ var
   GpSds : TSQLDataSet;
   QueryString, x_ip, x_Sender, x_To, x_Msg, x_HotelEmail, x_Recipient, x_TourCode, x_RemarksHotelCancel: String;
   x_sendMail: boolean;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  Outlook, MailItem, NmSpace: OLEVariant;
 begin
 
   Outlook := CreateOleObject('Outlook.Application');
@@ -932,10 +932,9 @@ var
   GpSds : TSQLDataSet;
   QueryString, x_ip, x_Sender, x_To, x_Msg, x_AgentEmail, x_Recipient, x_TourCode: String;
   x_UserName, x_PaxName, x_Rem: string;
-  x_TourDate: TDateTime;
   x_NumPax: integer;
   x_SendMail: boolean;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  Outlook, MailItem, NmSpace: OLEVariant;
 begin
 
   Outlook := CreateOleObject('Outlook.Application');
@@ -1272,6 +1271,8 @@ var
   x_NumPax: integer;
 begin
 
+  x_TourDate := StrToDate('01/01/2000');
+
   GpSds := TSQLDataSet.Create(nil);
   GpSds.SQLConnection := BackOfficeDataModule.SQLConnection;
 
@@ -1566,9 +1567,9 @@ end;
 procedure TQuoSendMailForm.SendSsMail;
 var
   GpSds : TSQLDataSet;
-  QueryString, x_ip, x_Sender, x_To, x_Msg, x_HotelEmail, x_Recipient, x_TourCode, x_date_str, x_Rem: String;
+  QueryString, x_ip, x_Sender, x_To, x_Msg, x_HotelEmail, x_Recipient, x_TourCode, x_Rem: String;
   x_sendMail : boolean;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  Outlook, MailItem, NmSpace: OLEVariant;
 begin
 
   Outlook := CreateOleObject('Outlook.Application');
@@ -1825,7 +1826,7 @@ var
   GpSds : TSQLDataSet;
   QueryString, x_ip, x_Sender, x_To, x_Msg, x_HotelEmail, x_Recipient, x_TourCode, x_RemarksHotelCancel: String;
   x_sendMail: boolean;
-  Outlook, MailItem, NmSpace, Attachment, MapiFolder: OLEVariant;
+  Outlook, MailItem, NmSpace: OLEVariant;
 begin
 
   Outlook := CreateOleObject('Outlook.Application');

@@ -21,8 +21,8 @@ object SelectElementsForm: TSelectElementsForm
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
-    Top = 578
-    Width = 897
+    Top = 574
+    Width = 889
     Height = 45
     Align = alBottom
     TabOrder = 0
@@ -63,7 +63,7 @@ object SelectElementsForm: TSelectElementsForm
   object Panel3: TPanel
     Left = 0
     Top = 0
-    Width = 897
+    Width = 889
     Height = 50
     Align = alTop
     TabOrder = 1
@@ -90,21 +90,21 @@ object SelectElementsForm: TSelectElementsForm
   object Panel2: TPanel
     Left = 0
     Top = 50
-    Width = 897
-    Height = 528
+    Width = 889
+    Height = 524
     Align = alClient
     TabOrder = 2
     object cxPageControl1: TcxPageControl
       Left = 1
       Top = 1
-      Width = 895
-      Height = 526
+      Width = 887
+      Height = 522
       ActivePage = cxTransferTab
       Align = alClient
       TabOrder = 0
-      ClientRectBottom = 520
+      ClientRectBottom = 516
       ClientRectLeft = 3
-      ClientRectRight = 889
+      ClientRectRight = 881
       ClientRectTop = 26
       object cxAccTab: TcxTabSheet
         Caption = 'Cost Accommodation'
@@ -186,8 +186,8 @@ object SelectElementsForm: TSelectElementsForm
         object cxTransferGrid: TcxGrid
           Left = 0
           Top = 0
-          Width = 886
-          Height = 494
+          Width = 878
+          Height = 490
           Hint = 'Right Click to  view errors during import'
           Align = alClient
           PopupMenu = PopupMenu2

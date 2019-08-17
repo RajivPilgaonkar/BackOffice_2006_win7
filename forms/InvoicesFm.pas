@@ -1682,7 +1682,6 @@ end;
 procedure TInvoicesForm.Split4increase1Click(Sender: TObject);
 var
   GpSds: TSQLDataSet;
-  x_InvoiceType: string;
 begin
   inherited;
 
@@ -1704,7 +1703,6 @@ end;
 procedure TInvoicesForm.ReversalofSplit1Click(Sender: TObject);
 var
   GpSds: TSQLDataSet;
-  x_InvoiceType: string;
 begin
   inherited;
 

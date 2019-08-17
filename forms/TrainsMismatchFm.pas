@@ -147,8 +147,6 @@ begin
 end;
 
 procedure TTrainsMismatchForm.cxButton3Click(Sender: TObject);
-var
-  x_Divisions_id : integer;
 begin
 
   if PageControl1.ActivePage = TabSheetSystem then
